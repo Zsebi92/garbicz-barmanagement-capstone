@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="https://garbiczfestival.com/files/garbicz_logo_110x115_hover2x.png" className="App-logo" alt="logo" />
+        <img src="https://tickets.garbiczfestival.com/uploads/garbicz_festival/image_asset_html_with_images_paragraph_image1/file/34/logo.png" className="App-logo" alt="logo" />
         <p>
           {helloMessage}
         </p>
