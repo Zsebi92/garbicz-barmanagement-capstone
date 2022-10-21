@@ -25,7 +25,7 @@ class HelloWorldControllerTest {
         mockMvc.perform(
                 MockMvcRequestBuilders.get("/api/hello"))
                         .andExpect(status().is(200))
-                .andExpect(content().string("Hello World!"));
+                .andExpect(content().string("Under construction!!!"));
     }
 
 }
