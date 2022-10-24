@@ -29,8 +29,8 @@ public class Inventory_Controller {
     }
 
     @PostMapping
-    public Listing_Model addListing(@RequestBody Listing_Model inventoryModel){
-        return service.addListing(inventoryModel);
+    public Listing_Model addListing(@RequestBody Listing_Model newListing){
+        return service.addListing(newListing);
     }
 
     @PutMapping("/{id}")

@@ -29,11 +29,11 @@ public class Inventory_Service {
                 .orElseThrow(() -> new NoSuchElementException("Not a single listing found with id" +id));
     }
 
-    public Listing_Model addListing(Listing_Model inventoryModel){
+    public Listing_Model addListing(Listing_Model newListing){
 
-        inventoryModel.setId(idService.generateId());
+        newListing.setId(idService.generateId());
 
-        return repo.save(inventoryModel);
+        return repo.save(newListing);
 
     }
 
