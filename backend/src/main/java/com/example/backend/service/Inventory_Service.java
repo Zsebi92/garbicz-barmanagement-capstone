@@ -1,6 +1,6 @@
 package com.example.backend.service;
 
-import com.example.backend.model.Inventory_Model;
+import com.example.backend.model.Listing_Model;
 import com.example.backend.repository.Inventory_Repo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,16 +20,16 @@ public class Inventory_Service {
         this.idService = idService;
     }
 
-    public List<Inventory_Model> getAllListings(){
+    public List<Listing_Model> getAllListings(){
         return repo.findAll();
     }
 
-    public Inventory_Model getListingById(String id){
+    public Listing_Model getListingById(String id){
         return repo.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Not a single listing found with id" +id));
     }
 
-    public Inventory_Model addListing(Inventory_Model inventoryModel){
+    public Listing_Model addListing(Listing_Model inventoryModel){
 
         inventoryModel.setId(idService.generateId());
 
@@ -37,7 +37,7 @@ public class Inventory_Service {
 
     }
 
-    public Inventory_Model editListing(String id, Inventory_Model inventoryModel) {
+    public Listing_Model editListing(String id, Listing_Model inventoryModel) {
         repo.save(inventoryModel);
         return inventoryModel;
     }

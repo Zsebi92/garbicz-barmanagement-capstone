@@ -1,6 +1,6 @@
 package com.example.backend.contoller;
 
-import com.example.backend.model.Inventory_Model;
+import com.example.backend.model.Listing_Model;
 import com.example.backend.service.Inventory_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,22 +19,22 @@ public class Inventory_Controller {
     }
 
     @GetMapping
-    public List<Inventory_Model> getAllListings(){
+    public List<Listing_Model> getAllListings(){
         return service.getAllListings();
     }
 
     @GetMapping("{id}")
-    public Inventory_Model getListingById(@PathVariable String id){
+    public Listing_Model getListingById(@PathVariable String id){
         return service.getListingById(id);
     }
 
     @PostMapping
-    public Inventory_Model addListing(@RequestBody Inventory_Model inventoryModel){
+    public Listing_Model addListing(@RequestBody Listing_Model inventoryModel){
         return service.addListing(inventoryModel);
     }
 
     @PutMapping("/{id}")
-    public Inventory_Model editListing(@PathVariable String id, @RequestBody Inventory_Model inventoryModel){
+    public Listing_Model editListing(@PathVariable String id, @RequestBody Listing_Model inventoryModel){
         return service.editListing(id, inventoryModel);
     }
 

@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document("inventory")
-public class Inventory_Model {
+public class Listing_Model {
 
     /*  ekb = Einkaufsbrutto
         ekn = Eikaufsnetto
