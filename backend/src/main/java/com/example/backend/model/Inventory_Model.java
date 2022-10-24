@@ -21,7 +21,6 @@ public class Inventory_Model {
     @Id
     String id;
     String name;
-
     String liter;
     String ekb;
     String ekn;
