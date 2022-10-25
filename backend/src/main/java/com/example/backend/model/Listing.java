@@ -12,19 +12,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document("inventory")
-public class Listing_Model {
+public class Listing {
 
-    /*  ekb = Einkaufsbrutto
-        ekn = Eikaufsnetto
-        fpk = Flaschen pro Kiste
-     */
+
     @Id
     String id;
     String name;
     String liter;
-    String ekb;
-    String ekn;
-    String fpk;
-    String kisten;
-    String paletten;
 }

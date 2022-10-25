@@ -1,22 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import axios from "axios";
-import UseListings from "./hooks/UseListings";
+import ListingGallery from "./components/ListingGallery";
+import useListing from "./hooks/useListing";
+import AddListing from "./components/AddListing";
 
-export default function App() {
 
-    const {listings, addListing, getListingById, editListing, deleteListing}  = UseListings();
+function App() {
+
+    const {listings, addListing} = useListing()
 
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src="https://tickets.garbiczfestival.com/uploads/garbicz_festival/image_asset_html_with_images_paragraph_image1/file/34/logo.png" className="App-logo" alt="logo" />
-        <p>
-        </p>
+        <h1>TEST</h1>
+
+
+          <ListingGallery listings={listings}/>
+          <AddListing addListing={addListing}/>
 
       </header>
     </div>
   );
 }
+
+export default App;
 
