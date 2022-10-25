@@ -23,6 +23,11 @@ public class ListingController {
         return service.getAllListings();
     }
 
+    @GetMapping
+    public Listing getListingById(@PathVariable String id){
+        return service.getListingById(id);
+    }
+
     @PostMapping
     public Listing addListing(@RequestBody Listing listing){
         return service.addListing(listing);

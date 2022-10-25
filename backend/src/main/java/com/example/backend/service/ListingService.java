@@ -3,10 +3,12 @@ package com.example.backend.service;
 import com.example.backend.model.Listing;
 import com.example.backend.repository.Inventory_Repo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
-@org.springframework.stereotype.Service
+@Service
 public class ListingService {
 
     private final Inventory_Repo repo;
@@ -20,6 +22,11 @@ public class ListingService {
 
     public List<Listing> getAllListings(){
         return repo.findAll();
+    }
+
+    public Listing getListingById(String id){
+        return repo.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Not a single listing fount with id: " +id));
     }
 
     public Listing addListing(Listing listing) {
