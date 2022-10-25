@@ -22,6 +22,12 @@ public class ListingService {
         return repo.findAll();
     }
 
+    public Listing addListing(Listing listing) {
+        listing.setId(idService.generateId());
+
+        return repo.save(listing);
+    }
+
 
 
 

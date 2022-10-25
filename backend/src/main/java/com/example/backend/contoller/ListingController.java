@@ -23,5 +23,10 @@ public class ListingController {
         return service.getAllListings();
     }
 
+    @PostMapping
+    public Listing addListing(@RequestBody Listing listing){
+        return service.addListing(listing);
+    }
+
 
 }

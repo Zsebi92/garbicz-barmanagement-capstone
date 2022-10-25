@@ -34,4 +34,18 @@ class ListingServiceTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void addListing() {
+        // GIVEN
+        Listing dummyListing = new Listing("1", "Cola", "0,33l");
+        when(repo.save(dummyListing)).thenReturn(dummyListing);
+
+        // WHEN
+        Listing actual = service.addListing(dummyListing);
+
+        // THEN
+        verify(repo).save(dummyListing);
+        assertEquals(dummyListing, actual);
+    }
+
 }
