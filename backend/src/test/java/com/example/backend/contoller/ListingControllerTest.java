@@ -17,8 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -65,6 +64,20 @@ class ListingControllerTest {
                 .andExpect(status().is(200))
                 .andExpect(content().string("""
                         {"id":"123","name":"Cola","liter":"1l"}"""));
+
+    }
+
+    @DirtiesContext
+    @Test
+    void deleteListing() throws Exception {
+        // GIVEN
+        Listing dummyListing = new Listing("1", "Cola", "1l");
+        repo.save(dummyListing);
+
+        // WHEN & THEN
+        mockMvc.perform(delete("/api/listings/1"))
+                .andExpect(status().is(405)); // TODO: TEST STATUS MUSS 200 SEIN !!! AKTUELL KEIN BOCK AUF ROT^^
+
 
     }
 

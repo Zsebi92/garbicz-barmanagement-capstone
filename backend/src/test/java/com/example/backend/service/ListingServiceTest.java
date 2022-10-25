@@ -5,6 +5,7 @@ import com.example.backend.repository.Inventory_Repo;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -46,6 +47,19 @@ class ListingServiceTest {
         // THEN
         verify(repo).save(dummyListing);
         assertEquals(dummyListing, actual);
+    }
+
+    @Test
+    void deleteListing(){
+        // GIVEN
+        Listing dummyListing = new Listing("1", "Cola", "0,5l");
+        when(repo.findById("1")).thenReturn(Optional.ofNullable(dummyListing));
+
+        // WHEN
+        service.deleteListing("1");
+
+        // THEN
+        verify(repo).deleteById("1");
     }
 
 }
