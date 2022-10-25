@@ -33,5 +33,10 @@ public class ListingController {
         return service.addListing(listing);
     }
 
+    @DeleteMapping
+    public void deleteListing(@PathVariable String id){
+        service.deleteListing(id);
+    }
+
 
 }
