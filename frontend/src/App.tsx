@@ -1,18 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import axios from "axios";
+import ListingGallery from "./components/ListingGallery";
+import useListing from "./hooks/useListing";
+import AddListing from "./components/AddListing";
 
 
-export default function App() {
+function App() {
 
+    const {listings, addListing} = useListing()
 
 
   return (
     <div className="App">
       <header className="App-header">
+        <h1>TEST</h1>
+
+
+          <ListingGallery listings={listings}/>
+          <AddListing addListing={addListing}/>
 
       </header>
     </div>
   );
 }
+
+export default App;
 

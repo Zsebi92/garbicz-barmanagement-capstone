@@ -23,7 +23,7 @@ public class ListingController {
         return service.getAllListings();
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Listing getListingById(@PathVariable String id){
         return service.getListingById(id);
     }
