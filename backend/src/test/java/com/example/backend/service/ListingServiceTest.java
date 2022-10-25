@@ -1,0 +1,37 @@
+package com.example.backend.service;
+
+import com.example.backend.model.Listing;
+import com.example.backend.repository.Inventory_Repo;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+class ListingServiceTest {
+
+    private final Inventory_Repo repo = mock(Inventory_Repo.class);
+    private final Id_Service idService = mock(Id_Service.class);
+    private final ListingService service = new ListingService(repo, idService);
+
+    @Test
+    void getAllListings(){
+        // GIVEN
+        when(repo.findAll())
+                .thenReturn(List.of(
+                        new Listing("1", "Cola", "1l"),
+                        new Listing("2", "Fanta", "1,5l")));
+
+        // WHEN
+        List<Listing> actual = service.getAllListings();
+
+        // THEN
+        List<Listing> expected = List.of(
+                new Listing("1", "Cola", "1l"),
+                new Listing("2", "Fanta", "1,5l"));
+        verify(repo).findAll();
+        assertEquals(expected, actual);
+    }
+
+}

@@ -1,0 +1,47 @@
+package com.example.backend.contoller;
+
+import com.example.backend.model.Listing;
+import com.example.backend.repository.Inventory_Repo;
+import com.example.backend.service.Id_Service;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+class ListingControllerTest {
+
+    @Autowired
+    MockMvc mockMvc;
+
+    @Autowired
+    private Inventory_Repo repo;
+
+    @MockBean
+    private Id_Service idService;
+
+    @DirtiesContext
+    @Test
+    void getAllListings() throws Exception {
+        // GIVEN
+        Listing dummyListing = new Listing("1", "Cola", "1l");
+        repo.save(dummyListing);
+
+        // WHEN & THEN
+        mockMvc.perform(
+                MockMvcRequestBuilders.get("/api/listings"))
+                .andExpect(status().is(200))
+                .andExpect(content().string("""
+                        [{"id":"1","name":"Cola","liter":"1l"}]"""));
+    }
+
+}
