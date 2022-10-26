@@ -15,13 +15,13 @@ export default function useListing(){
             .then((listings) => setAllListings(listings))
     }
 
-    const addListing = (name: string, liter: string, grossPurchase: string, purchaseNet: string, bottlesPerBoxes: string, boxes: string, pallets: string) => {
+    const addListing = (name: string, liter: string, grossPurchase: string, purchaseNet: string, bottlesPerBox: string, boxes: string, pallets: string) => {
         let newListing = {
             name: name,
             liter: liter,
             grossPurchase: grossPurchase,
             purchaseNet: purchaseNet,
-            bottlesPerBoxes: bottlesPerBoxes,
+            bottlesPerBox: bottlesPerBox,
             boxes: boxes,
             pallets: pallets
         }
