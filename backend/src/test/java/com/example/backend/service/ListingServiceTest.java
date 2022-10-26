@@ -62,4 +62,21 @@ class ListingServiceTest {
         verify(repo).deleteById("1");
     }
 
+    @Test
+    void editListing() {
+        // GIVEN
+        Listing dummyListing = new Listing("1", "Cola", "0,5l", "1,50", "1,20", "24", "200", "100");
+
+        when(service.editListing("1", dummyListing)).thenReturn(dummyListing);
+        when(repo.existsById("1")).thenReturn(true);
+
+        // WHEN
+        Listing actual = service.editListing("1", dummyListing);
+
+        // THEN
+        assertEquals(dummyListing, actual);
+
+
+    }
+
 }
