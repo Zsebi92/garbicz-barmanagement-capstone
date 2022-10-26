@@ -38,7 +38,7 @@ class ListingControllerTest {
     @Test
     void getAllListings() throws Exception {
         // GIVEN
-        Listing dummyListing = new Listing("1", "Cola", "1l");
+        Listing dummyListing = new Listing("1", "Cola", "1l","1,50", "1,20", "24", "200", "100");
         repo.save(dummyListing);
 
         // WHEN & THEN
@@ -46,7 +46,7 @@ class ListingControllerTest {
                 get("/api/listings"))
                 .andExpect(status().is(200))
                 .andExpect(content().string("""
-                        [{"id":"1","name":"Cola","liter":"1l"}]"""));
+                        [{"id":"1","name":"Cola","liter":"1l","grossPurchase":"1,50","purchaseNet":"1,20","bottlesPerBoxes":"24","boxes":"200","pallets":"100"}]"""));
     }
 
     @DirtiesContext
@@ -60,10 +60,10 @@ class ListingControllerTest {
                 post("/api/listings")
                         .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                         .content("""
-                                {"name":"Cola","liter":"1l"}"""))
+                                {"name":"Cola","liter":"1l","grossPurchase":"1,50","purchaseNet":"1,20","bottlesPerBoxes":"24","boxes":"200","pallets":"100"}"""))
                 .andExpect(status().is(200))
                 .andExpect(content().string("""
-                        {"id":"123","name":"Cola","liter":"1l"}"""));
+                        {"id":"123","name":"Cola","liter":"1l","grossPurchase":"1,50","purchaseNet":"1,20","bottlesPerBoxes":"24","boxes":"200","pallets":"100"}"""));
 
     }
 
@@ -71,7 +71,7 @@ class ListingControllerTest {
     @Test
     void deleteListing() throws Exception {
         // GIVEN
-        Listing dummyListing = new Listing("1", "Cola", "1l");
+        Listing dummyListing = new Listing("1", "Cola", "1l", "1,50", "1,20", "24", "200", "100");
         repo.save(dummyListing);
 
         // WHEN & THEN
