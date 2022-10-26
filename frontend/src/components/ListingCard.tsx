@@ -11,6 +11,11 @@ export default function ListingCard(props: ListingCardProps) {
         <div className={"listing-card"}>
             <h3>{props.listing.name}</h3>
             <h4>{props.listing.liter}</h4>
+
+            <div>
+            <h4>{props.listing.grossPurchase}</h4>
+            <h4>{props.listing.purchaseNet}</h4>
+            </div>
         </div>
     )
 }
