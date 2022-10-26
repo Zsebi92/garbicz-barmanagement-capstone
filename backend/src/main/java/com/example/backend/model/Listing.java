@@ -21,7 +21,7 @@ public class Listing {
     String liter;
     String grossPurchase;
     String purchaseNet;
-    String bottlesPerBoxes;
+    String bottlesPerBox;
     String boxes;
     String pallets;
 }

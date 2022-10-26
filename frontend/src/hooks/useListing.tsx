@@ -15,12 +15,15 @@ export default function useListing(){
             .then((listings) => setAllListings(listings))
     }
 
-    const addListing = (name: string, liter: string, grossPurchase: string, purchaseNet: string) => {
+    const addListing = (name: string, liter: string, grossPurchase: string, purchaseNet: string, bottlesPerBoxes: string, boxes: string, pallets: string) => {
         let newListing = {
             name: name,
             liter: liter,
             grossPurchase: grossPurchase,
-            purchaseNet: purchaseNet
+            purchaseNet: purchaseNet,
+            bottlesPerBoxes: bottlesPerBoxes,
+            boxes: boxes,
+            pallets: pallets
         }
 
         axios.post("/api/listings", newListing)

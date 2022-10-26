@@ -4,7 +4,7 @@ export type Listing = {
     liter:string;
     grossPurchase:string;
     purchaseNet:string;
-    bottlesPerBoxes:string;
+    bottlesPerBox:string;
     boxes:string;
     pallets:string;
 }
