@@ -7,7 +7,7 @@ import AddListing from "./components/AddListing";
 
 function App() {
 
-    const {listings, addListing} = useListing()
+    const {listings, getListingById, addListing, deleteListing, editListing} = useListing()
 
 
   return (
