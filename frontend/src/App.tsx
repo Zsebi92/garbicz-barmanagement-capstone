@@ -1,23 +1,35 @@
 import React from 'react';
 import './App.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ListingGallery from "./components/ListingGallery";
-import useListing from "./hooks/useListing";
-import AddListing from "./components/AddListing";
+import useListing from "./hooks/UseListing";
 
 
 function App() {
 
-    const {listings, addListing} = useListing()
+    const {listings, getAllListings, addListing, editListing,deleteListing } = useListing()
+
+
 
 
   return (
     <div className="App">
+        <ToastContainer position="top-right"
+                        autoClose={2000}
+                        hideProgressBar={false}
+                        newestOnTop={true}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"/>
       <header className="App-header">
-        <h1>TEST</h1>
+        <h1>Add Listing</h1>
+          
+          <ListingGallery listings={listings} getAllListings={getAllListings} addListing={addListing} deleteListing={deleteListing}/>
 
-
-          <ListingGallery listings={listings}/>
-          <AddListing addListing={addListing}/>
 
       </header>
     </div>

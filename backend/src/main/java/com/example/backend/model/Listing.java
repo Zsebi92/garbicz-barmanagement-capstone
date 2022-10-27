@@ -19,4 +19,9 @@ public class Listing {
     String id;
     String name;
     String liter;
+    String grossPurchase;
+    String purchaseNet;
+    String bottlesPerBox;
+    String boxes;
+    String pallets;
 }
