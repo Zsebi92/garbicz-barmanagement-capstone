@@ -26,6 +26,12 @@ export default function useListing(){
             .then(getAllListings)
     }
 
+    const editListing = (listing: Listing) => {
+        axios.put("api/listings" + listing.id, listing)
+            .then(getAllListings)
+    }
+
+
     const deleteListing = (id: string) => {
         axios.delete("/api/listings/" +id)
             .then(() => toast.success("Getränk gelöscht"))
@@ -33,6 +39,6 @@ export default function useListing(){
             .catch((error) => toast.error(error.message))
     }
 
-    return {listings, getAllListings, addListing, deleteListing }
+    return {listings, getAllListings, addListing, editListing ,deleteListing }
 
 }

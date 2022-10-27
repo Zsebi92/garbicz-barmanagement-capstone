@@ -45,13 +45,13 @@ export default function ListingGallery(props: ListingGalleryProps) {
     return(
         <>
             <form onSubmit={(event) => onCreate(event)}>
-                <input name={"name"} placeholder={"name"} onChange={event => setName(event.target.value)}/>
-                <input name={"liter"} placeholder={"liter"} onChange={event => setLiter(event.target.value)}/>
-                <input name={"grossPurchase"} placeholder={"grossPurchase"} onChange={event => setGrossPurchase(event.target.value)}/>
-                <input name={"purchaseNet"} placeholder={"purchaseNet"} onChange={event => setPurchaseNet(event.target.value)}/>
-                <input name={"bottlesPerBox"} placeholder={"bottlesPerBox"} onChange={event => setBottlesPerBox(event.target.value)}/>
-                <input name={"boxes"} placeholder={"boxes"} onChange={event => setBoxes(event.target.value)}/>
-                <input name={"pallets"} placeholder={"pallets"} onChange={event => setPallets(event.target.value)}/>
+                <input name={"name"} placeholder={"Name"} onChange={event => setName(event.target.value)}/>
+                <input name={"liter"} placeholder={"Liter"} onChange={event => setLiter(event.target.value)}/>
+                <input name={"grossPurchase"} placeholder={"EKB"} onChange={event => setGrossPurchase(event.target.value)}/>
+                <input name={"purchaseNet"} placeholder={"EKN"} onChange={event => setPurchaseNet(event.target.value)}/>
+                <input name={"bottlesPerBox"} placeholder={"Flaschen/Kiste"} onChange={event => setBottlesPerBox(event.target.value)}/>
+                <input name={"boxes"} placeholder={"Kisten"} onChange={event => setBoxes(event.target.value)}/>
+                <input name={"pallets"} placeholder={"Paletten"} onChange={event => setPallets(event.target.value)}/>
                 <button type={"submit"}> Confirm </button>
             </form>
 
