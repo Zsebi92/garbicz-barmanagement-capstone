@@ -45,6 +45,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
 
     return(
         <>
+            <h1>Add Listing</h1>
             <form onSubmit={(event) => onCreate(event)}>
                 <input name={"name"} placeholder={"Name"} onChange={event => setName(event.target.value)}/>
                 <input name={"liter"} placeholder={"Liter"} onChange={event => setLiter(event.target.value)}/>
