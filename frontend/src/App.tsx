@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ListingGallery from "./components/ListingGallery";
 import useListing from "./hooks/UseListing";
@@ -8,7 +8,7 @@ import useListing from "./hooks/UseListing";
 
 function App() {
 
-    const {listings, getAllListings, addListing, editListing,deleteListing } = useListing()
+    const {listings, getAllListings, addListing, deleteListing } = useListing()
 
 
 

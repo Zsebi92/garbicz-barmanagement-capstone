@@ -1,28 +1,16 @@
-.card {
-    background-color: dimgrey;
-}
-
-.gross-purchase {
+.listing-card {
     display: flex;
-    justify-content: left;
+    flex-direction: column;
 }
 
-.purchase-net{
-    display: flex;
-    justify-content: left;
+h1 {
+    color: #282c34;
+    font-weight: bolder;
 }
 
-.bottles-per-box{
-    display: inherit;
-    justify-content: right;
-}
 
-.boxes {
-    display: inherit;
-    justify-content: right;
-}
-
-.pallets {
-    display: inherit;
-    justify-content: right;
+p{
+    text-align: center;
+    font-style: italic;
+    color: #282c34;
 }

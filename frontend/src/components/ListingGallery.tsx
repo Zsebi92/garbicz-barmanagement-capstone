@@ -1,6 +1,7 @@
 import {Listing} from "../model/Listing";
 import ListingCard from "./ListingCard";
-import {ChangeEvent, FormEvent, useState} from "react";
+import "../components/ListingGallery.css"
+import {FormEvent, useState} from "react";
 
 type ListingGalleryProps = {
     listings: Listing [];
