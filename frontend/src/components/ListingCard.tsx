@@ -17,11 +17,12 @@ export default function ListingCard(props: ListingCardProps) {
     }
 
     return(
-        <div className={"movie-card"}>
+        <div className={"listing-card"}>
+            <h1>{props.listing.name}  {props.listing.liter}</h1>
+            <p>EKB: {props.listing.grossPurchase} |      Kisten: {props.listing.boxes} </p>
+            <p>EKN: {props.listing.purchaseNet}  |       Paletten: {props.listing.pallets}  </p>
+            <p>{props.listing.bottlesPerBox} Flaschen/Kiste   </p>
             <button onClick={deleteHandler}>Delete</button>
-            <p>{props.listing.name}</p>
-            <p>{props.listing.liter} ({props.listing.grossPurchase}) ({props.listing.purchaseNet}) </p>
-            <p>{props.listing.bottlesPerBox} ({props.listing.boxes}) ({props.listing.pallets}) </p>
         </div>
     )
 }
