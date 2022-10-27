@@ -5,14 +5,13 @@ import {NavLink} from "react-router-dom";
 
 export default function Inventory() {
 
-    const {listings, getAllListings, addListing, deleteListing} = useListing()
+    const {listings, getAllListings, addListing ,deleteListing} = useListing()
 
     return (
         <div>
             <h1>Inventory</h1>
 
-            <ListingGallery listings={listings} getAllListings={getAllListings} addListing={addListing}
-                            deleteListing={deleteListing}/>
+            <ListingGallery listings={listings} getAllListings={getAllListings} addListing={addListing} deleteListing={deleteListing} />
 
             <section><button><NavLink to={"/"}>Back</NavLink></button></section>
 

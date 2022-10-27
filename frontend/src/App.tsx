@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {HashRouter, NavLink, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 
 import AdminOverview from "./pages/AdminOverview";
 import Inventory from "./pages/Inventory";
@@ -11,8 +11,11 @@ import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
 
 
-function App() {
 
+
+
+
+function App() {
 
     return (
         <div className="App">

@@ -1,5 +1,3 @@
-import {HashRouter, NavLink, Route, Routes} from "react-router-dom";
-import Inventory from "./Inventory";
 import React from "react";
 import NavBar from "../components/NavBar";
 
