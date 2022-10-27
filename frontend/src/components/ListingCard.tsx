@@ -18,7 +18,7 @@ export default function ListingCard(props: ListingCardProps) {
 
     return(
         <div className={"listing-card"}>
-            <h1>{props.listing.name}  {props.listing.liter}</h1>
+            <h2>{props.listing.name}  {props.listing.liter}</h2>
             <p>EKB: {props.listing.grossPurchase} |      Kisten: {props.listing.boxes} </p>
             <p>EKN: {props.listing.purchaseNet}  |       Paletten: {props.listing.pallets}  </p>
             <p>{props.listing.bottlesPerBox} Flaschen/Kiste   </p>

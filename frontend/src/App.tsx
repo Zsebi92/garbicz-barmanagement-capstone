@@ -1,39 +1,50 @@
 import React from 'react';
 import './App.css';
-import { ToastContainer } from 'react-toastify';
+import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ListingGallery from "./components/ListingGallery";
-import useListing from "./hooks/UseListing";
+import {HashRouter, Route, Routes} from "react-router-dom";
+
+import AdminOverview from "./pages/AdminOverview";
+import Inventory from "./pages/Inventory";
+import BarManagement from "./pages/BarManangement";
+import OrderManagement from "./pages/OrderManagement";
+import StaffManagement from "./pages/StaffManagement";
+
+
+
+
 
 
 function App() {
 
-    const {listings, getAllListings, addListing, deleteListing } = useListing()
+    return (
+        <div className="App">
+            <ToastContainer position="top-right"
+                            autoClose={2000}
+                            hideProgressBar={false}
+                            newestOnTop={true}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="dark"/>
+            <header className="App-header">
+
+                <HashRouter>
+                    <Routes>
+                        <Route path={"/"} element={<AdminOverview/>}/>
+                        <Route path={"/inventory"} element={<Inventory/>}/>
+                        <Route path={"/bar-management"} element={<BarManagement/>}/>
+                        <Route path={"/order-management"} element={<OrderManagement/>}/>
+                        <Route path={"/staff-management"} element={<StaffManagement/>}/>
+                    </Routes>
+                </HashRouter>
 
 
-
-
-  return (
-    <div className="App">
-        <ToastContainer position="top-right"
-                        autoClose={2000}
-                        hideProgressBar={false}
-                        newestOnTop={true}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover
-                        theme="dark"/>
-      <header className="App-header">
-        <h1>Add Listing</h1>
-          
-          <ListingGallery listings={listings} getAllListings={getAllListings} addListing={addListing} deleteListing={deleteListing}/>
-
-
-      </header>
-    </div>
-  );
+            </header>
+        </div>
+    );
 }
 
 export default App;
