@@ -1,7 +1,7 @@
 export type Bar ={
     id?:string;
     name:string;
-    locations:string;
+    location:string;
     description:string;
 
 

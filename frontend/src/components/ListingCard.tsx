@@ -22,7 +22,7 @@ export default function ListingCard(props: ListingCardProps) {
             <p>EKB: {props.listing.grossPurchase} |      Kisten: {props.listing.boxes} </p>
             <p>EKN: {props.listing.purchaseNet}  |       Paletten: {props.listing.pallets}  </p>
             <p>{props.listing.bottlesPerBox} Flaschen/Kiste   </p>
-            <button onClick={deleteHandler}>Delete</button>
+            <button onClick={deleteHandler}>Löschen</button>
         </div>
     )
 }

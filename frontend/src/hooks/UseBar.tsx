@@ -12,25 +12,25 @@ export default function useBar(){
     }, [])
 
     const getAllBars = () => {
-        axios.get("/api/bars")
+        axios.get("/api/bars/")
             .then(response => response.data)
             .then(data => setBar(data))
             .catch((error) => toast.error(error.message))
     }
 
     const addBar = (bar: Bar) => {
-        axios.post("/api/bars", bar)
+        axios.post("/api/bars/", bar)
             .then(() => toast.success("Bar wurde erfolgreich angelegt"))
             .catch((error) => toast.error(error.message))
             .then(getAllBars)
     }
 
     const deleteBar = (id: string) => {
-        axios.delete("/api/bars" +id)
+        axios.delete("/api/bars/" +id)
             .then(() => toast.success("Bar erfolgreich gelösch"))
             .catch((error) => toast.error(error.message))
             .then(getAllBars)
     }
 
-    return {bar, getAllBars, addBar, deleteBar}
+    return {bar, addBar, getAllBars, deleteBar}
 }
