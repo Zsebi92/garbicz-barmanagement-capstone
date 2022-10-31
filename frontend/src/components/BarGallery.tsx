@@ -1,6 +1,5 @@
 import {Bar} from "../model/Bar";
 import React, {FormEvent, useState} from "react";
-import ListingCard from "./ListingCard";
 import BarCard from "./BarCard";
 import {toast} from "react-toastify";
 
@@ -12,6 +11,7 @@ type BarGalleryProps = {
 }
 
 export default function BarGallery(props: BarGalleryProps) {
+
 
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
@@ -56,9 +56,9 @@ export default function BarGallery(props: BarGalleryProps) {
                 {props.bars.length > 1 ?
                     <h1> Keine Bars vorhanden </h1>
                     :
-                    props.bars.map((m) =>
+                    props.bars.map((b) =>
                         <div className={"card"}>
-                            <BarCard bar={m} deleteBar={props.deleteBar}/>
+                            <BarCard bar={b} deleteBar={props.deleteBar}/>
                         </div>)}
             </div>
         </>

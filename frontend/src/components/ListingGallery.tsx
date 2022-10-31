@@ -67,7 +67,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
                 <input name={"pallets"}
                        placeholder={"Paletten"}
                        onChange={event => setPallets(event.target.value)}/>
-                <button type={"submit"}>Hinzufügen</button>
+                <button type={"submit"} >Hinzufügen</button>
 
             </form>
 
