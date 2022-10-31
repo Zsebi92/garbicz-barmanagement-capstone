@@ -1,5 +1,5 @@
-import {Listing} from "../model/Listing";
-import "../components/ListingCard.css"
+import {Listing} from "../../model/Listing";
+import "./ListingCard.css"
 
 
 type ListingCardProps = {

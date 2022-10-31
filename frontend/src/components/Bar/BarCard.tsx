@@ -1,5 +1,5 @@
-import {Bar} from "../model/Bar";
-import "../components/BarCard.css"
+import {Bar} from "../../model/Bar";
+import "./BarCard.css"
 
 type BarCardProps = {
     bar: Bar;

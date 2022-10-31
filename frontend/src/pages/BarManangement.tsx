@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
-import BarGallery from "../components/BarGallery";
+import BarGallery from "../components/Bar/BarGallery";
 import useBar from "../hooks/UseBar";
 
 

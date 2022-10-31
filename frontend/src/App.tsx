@@ -9,6 +9,7 @@ import Inventory from "./pages/Inventory";
 import BarManagement from "./pages/BarManangement";
 import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
+import ReactToPrint from "react-to-print";
 
 
 function App() {
