@@ -1,6 +1,6 @@
 import {Listing} from "../../model/Listing";
 import ListingCard from "./ListingCard";
-import "./ListingGallery.css"
+import "../components/ListingGallery.css"
 import React, {FormEvent, useState} from "react";
 import {toast} from "react-toastify";
 
@@ -67,7 +67,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
                 <input name={"pallets"}
                        placeholder={"Paletten"}
                        onChange={event => setPallets(event.target.value)}/>
-                <button key={"submit-button"}  type={"submit"} >Hinzufügen</button>
+                <button type={"submit"}>Hinzufügen</button>
 
             </form>
 
@@ -76,8 +76,8 @@ export default function ListingGallery(props: ListingGalleryProps) {
                     <h1> Keine Getränke vorhanden </h1>
                     :
                     props.listings.map((m) =>
-                        <div key={m.id} className={"card"}>
-                            <ListingCard  listing={m}  deleteListing={props.deleteListing}/>
+                        <div className={"card"}>
+                            <ListingCard listing={m} deleteListing={props.deleteListing}/>
                         </div>)}
             </div>
         </>

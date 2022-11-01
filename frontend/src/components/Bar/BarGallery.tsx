@@ -12,7 +12,6 @@ type BarGalleryProps = {
 
 export default function BarGallery(props: BarGalleryProps) {
 
-
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
     const [description, setDescription] = useState("")
@@ -52,7 +51,7 @@ export default function BarGallery(props: BarGalleryProps) {
 
             </form>
 
-            <div  className={"cards"}>
+            <div className={"cards"}>
                 {props.bars.length > 1 ?
                     <h1> Keine Bars vorhanden </h1>
                     :
