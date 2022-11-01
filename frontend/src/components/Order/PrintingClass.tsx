@@ -20,7 +20,7 @@ export default function PrintingClass() {
             />
             <div ref={componentRef}>
                     <table style={{width:"60%", border:'1px solid', margin:'auto'}}/>
-                    <thead>
+                    <thead> DummyOrder_1
                     <tr>
                         <th>No</th>
                         <th>Name</th>
