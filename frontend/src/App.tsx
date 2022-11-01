@@ -1,4 +1,3 @@
-import React, {useRef} from 'react';
 import './App.css';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
