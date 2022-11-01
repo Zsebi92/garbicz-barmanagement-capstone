@@ -1,6 +1,6 @@
 import {Listing} from "../../model/Listing";
 import ListingCard from "./ListingCard";
-import "ListingGallery.css"
+import "./ListingGallery.css";
 import React, {FormEvent, useState} from "react";
 import {toast} from "react-toastify";
 
