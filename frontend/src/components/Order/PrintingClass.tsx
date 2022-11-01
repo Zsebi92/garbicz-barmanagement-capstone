@@ -1,7 +1,6 @@
 import ReactToPrint from "react-to-print";
 import React, {useEffect, useRef} from "react";
-import {Listing} from "../../model/Listing";
-import {Bar} from "../../model/Bar";
+
 
 
 export default function PrintingClass() {
