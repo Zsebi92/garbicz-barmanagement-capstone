@@ -1,4 +1,4 @@
-import ListingGallery from "../components/ListingGallery";
+import ListingGallery from "../components/Listing/ListingGallery";
 import React from "react";
 import useListing from "../hooks/UseListing";
 import {NavLink} from "react-router-dom";

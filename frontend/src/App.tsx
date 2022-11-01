@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +11,7 @@ import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
 
 
+
 function App() {
 
     return (
@@ -21,9 +22,7 @@ function App() {
                             newestOnTop={true}
                             closeOnClick
                             rtl={false}
-                            pauseOnFocusLoss
                             draggable
-                            pauseOnHover
                             theme="dark"/>
             <header className="App-header">
 
@@ -39,6 +38,9 @@ function App() {
 
 
             </header>
+
+
+
         </div>
     );
 }
