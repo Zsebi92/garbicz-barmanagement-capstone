@@ -2,6 +2,7 @@ import {Listing} from "../model/Listing";
 import ListingCard from "./ListingCard";
 import "../components/ListingGallery.css"
 import React, {FormEvent, useState} from "react";
+import {toast} from "react-toastify";
 
 
 type ListingGalleryProps = {
@@ -24,7 +25,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
     const onCreate = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         if (!name || !liter || !grossPurchase || !purchaseNet || !bottlesPerBox || !boxes || !pallets) {
-            alert("Bitte ALLES ausfüllen!")
+            toast.error("Bitte ALLES ausfüllen!")
             return
         }
 
@@ -66,13 +67,13 @@ export default function ListingGallery(props: ListingGalleryProps) {
                 <input name={"pallets"}
                        placeholder={"Paletten"}
                        onChange={event => setPallets(event.target.value)}/>
-                <button type={"submit"}> Confirm</button>
+                <button type={"submit"} >Hinzufügen</button>
 
             </form>
 
             <div className={"cards"}>
                 {props.listings.length < 1 ?
-                    <h1> Keine Filme Vorhanden </h1>
+                    <h1> Keine Getränke vorhanden </h1>
                     :
                     props.listings.map((m) =>
                         <div className={"card"}>

@@ -14,7 +14,7 @@ class ListingServiceTest {
 
     private final Inventory_Repo repo = mock(Inventory_Repo.class);
     private final Id_Service idService = mock(Id_Service.class);
-    private final ListingService service = new ListingService(repo, idService);
+    private final Listing_Service service = new Listing_Service(repo, idService);
 
     @Test
     void getAllListings(){

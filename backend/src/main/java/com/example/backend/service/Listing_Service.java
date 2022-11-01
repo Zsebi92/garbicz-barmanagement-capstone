@@ -4,20 +4,18 @@ import com.example.backend.model.Listing;
 import com.example.backend.repository.Inventory_Repo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
-public class ListingService {
+public class Listing_Service {
 
     private final Inventory_Repo repo;
     private final Id_Service idService;
 
     @Autowired
-    public ListingService(Inventory_Repo repo, Id_Service idService) {
+    public Listing_Service(Inventory_Repo repo, Id_Service idService) {
         this.repo = repo;
         this.idService = idService;
     }
@@ -28,7 +26,7 @@ public class ListingService {
 
     public Listing getListingById(String id){
         return repo.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Not a single listing fount with id: " +id));
+                .orElseThrow(() -> new NoSuchElementException("Not a single listing found with id: " +id));
     }
 
     public Listing addListing(Listing listing) {
