@@ -14,7 +14,6 @@ import StaffManagement from "./pages/StaffManagement";
 
 function App() {
 
-
     return (
         <div className="App">
             <ToastContainer position="top-right"
