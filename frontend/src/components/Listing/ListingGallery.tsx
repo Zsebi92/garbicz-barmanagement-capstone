@@ -77,7 +77,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
                     :
                     props.listings.map((m) =>
                         <div className={"card"}>
-                            <ListingCard listing={m} deleteListing={props.deleteListing}/>
+                            <ListingCard listing={m}  deleteListing={props.deleteListing}/>
                         </div>)}
             </div>
         </>

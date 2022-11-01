@@ -56,9 +56,9 @@ export default function BarGallery(props: BarGalleryProps) {
                 {props.bars.length > 1 ?
                     <h1> Keine Bars vorhanden </h1>
                     :
-                    props.bars.map((b) =>
+                    props.bars.map((b,) =>
                         <div className={"card"}>
-                            <BarCard bar={b} deleteBar={props.deleteBar}/>
+                            <BarCard bar={b}  deleteBar={props.deleteBar}/>
                         </div>)}
             </div>
         </>
