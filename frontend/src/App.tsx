@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,10 +9,11 @@ import Inventory from "./pages/Inventory";
 import BarManagement from "./pages/BarManangement";
 import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
-import ReactToPrint from "react-to-print";
+
 
 
 function App() {
+
 
     return (
         <div className="App">
@@ -40,6 +41,9 @@ function App() {
 
 
             </header>
+
+
+
         </div>
     );
 }
