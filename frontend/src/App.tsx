@@ -22,9 +22,7 @@ function App() {
                             newestOnTop={true}
                             closeOnClick
                             rtl={false}
-                            pauseOnFocusLoss
                             draggable
-                            pauseOnHover
                             theme="dark"/>
             <header className="App-header">
 
