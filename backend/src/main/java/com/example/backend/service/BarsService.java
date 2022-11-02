@@ -1,7 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Bar;
-import com.example.backend.repository.Bars_Repo;
+import com.example.backend.repository.BarsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
-public class Bars_Service {
+public class BarsService {
 
-    private final Bars_Repo repo;
-    private final Id_Service idService;
+    private final BarsRepo repo;
+    private final IdService idService;
 
     @Autowired
-    public Bars_Service(Bars_Repo repo, Id_Service idService) {
+    public BarsService(BarsRepo repo, IdService idService) {
         this.repo = repo;
         this.idService = idService;
     }

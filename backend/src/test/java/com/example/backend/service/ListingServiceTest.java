@@ -1,7 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Listing;
-import com.example.backend.repository.Inventory_Repo;
+import com.example.backend.repository.InventoryRepo;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -12,9 +12,9 @@ import static org.mockito.Mockito.*;
 
 class ListingServiceTest {
 
-    private final Inventory_Repo repo = mock(Inventory_Repo.class);
-    private final Id_Service idService = mock(Id_Service.class);
-    private final Listing_Service service = new Listing_Service(repo, idService);
+    private final InventoryRepo repo = mock(InventoryRepo.class);
+    private final IdService idService = mock(IdService.class);
+    private final ListingService service = new ListingService(repo, idService);
 
     @Test
     void getAllListings(){

@@ -1,7 +1,7 @@
 package com.example.backend.contoller;
 
 import com.example.backend.model.Listing;
-import com.example.backend.service.Listing_Service;
+import com.example.backend.service.ListingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,12 +9,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/listings")
-public class Listing_Controller {
+public class ListingController {
 
-    private final Listing_Service service;
+    private final ListingService service;
 
     @Autowired
-    public Listing_Controller(Listing_Service service){
+    public ListingController(ListingService service){
         this.service = service;
     }
 

@@ -1,18 +1,18 @@
 package com.example.backend.contoller;
 
 import com.example.backend.model.Bar;
-import com.example.backend.service.Bars_Service;
+import com.example.backend.service.BarsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/bars")
-public class Bars_Controller {
+public class BarsController {
 
-    private final Bars_Service service;
+    private final BarsService service;
 
-    public Bars_Controller(Bars_Service service) {
+    public BarsController(BarsService service) {
         this.service = service;
     }
 

@@ -1,8 +1,8 @@
 package com.example.backend.contoller;
 
 import com.example.backend.model.Listing;
-import com.example.backend.repository.Inventory_Repo;
-import com.example.backend.service.Id_Service;
+import com.example.backend.repository.InventoryRepo;
+import com.example.backend.service.IdService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,10 +29,10 @@ class ListingControllerTest {
     MockMvc mockMvc;
 
     @Autowired
-    private Inventory_Repo repo;
+    private InventoryRepo repo;
 
     @MockBean
-    private Id_Service idService;
+    private IdService idService;
 
     @DirtiesContext
     @Test

@@ -1,20 +1,15 @@
 package com.example.backend.contoller;
 
 import com.example.backend.model.Bar;
-import com.example.backend.model.Listing;
-import com.example.backend.repository.Bars_Repo;
-import com.example.backend.service.Id_Service;
+import com.example.backend.repository.BarsRepo;
+import com.example.backend.service.IdService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -27,10 +22,10 @@ class Bars_ControllerTest {
     MockMvc mockMvc;
 
     @Autowired
-    private Bars_Repo repo;
+    private BarsRepo repo;
 
     @Autowired
-    private Id_Service idService;
+    private IdService idService;
 
     @DirtiesContext
     @Test
