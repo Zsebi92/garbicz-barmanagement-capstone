@@ -1,13 +1,13 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
 import BarGallery from "../components/Bar/BarGallery";
-import useBar from "../hooks/UseBar";
+import UseBar from "../hooks/UseBar";
 
 
 
 export default function BarManagement() {
 
-    const {bar, addBar,  getAllBars, deleteBar} = useBar()
+    const {bar, addBar,  getAllBars, deleteBar} = UseBar()
 
     return (
         <div>

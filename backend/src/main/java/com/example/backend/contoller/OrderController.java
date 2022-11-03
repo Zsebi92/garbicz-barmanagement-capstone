@@ -33,7 +33,7 @@ public class OrderController {
         return service.addOrder(orderHandler);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deleteOrder(@PathVariable String id) {
         service.deleteOrder(id);
     }

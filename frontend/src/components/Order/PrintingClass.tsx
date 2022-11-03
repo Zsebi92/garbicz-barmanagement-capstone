@@ -1,9 +1,13 @@
 import ReactToPrint from "react-to-print";
 import React, {useEffect, useRef} from "react";
+import {Order} from "../../model/Order";
+
+type PrintClassProps = {
+    order: Order,
+}
 
 
-
-export default function PrintingClass() {
+export default function PrintingClass(props: PrintClassProps) {
 
     useEffect(() => {
 
@@ -20,50 +24,22 @@ export default function PrintingClass() {
             />
             <div ref={componentRef}>
                     <table style={{width:"60%", border:'1px solid', margin:'auto'}}/>
-                    <thead> DummyOrder_1
+                    <thead> Order: {props.order.id}
                     <tr>
                         <th>No</th>
-                        <th>Name</th>
-                        <th>Liter</th>
-                        <th>Kisten</th>
+                        <th>Barname</th>
+                        <th>Getränk</th>
+                        <th>Größe</th>
+                        <th>Menge in Kisten</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Cola</td>
-                        <td>0,2l</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Cola</td>
-                        <td>0,33l</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Cola</td>
-                        <td>0,5l</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Cola</td>
-                        <td>0,75l</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Cola</td>
-                        <td>1,0l</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Cola</td>
-                        <td>1,5l</td>
-                        <td>10</td>
+                        <td>{props.order.barName}</td>
+                        <td>{props.order.listingName}</td>
+                        <td>{props.order.listingSize}</td>
+                        <td>{props.order.quantity}</td>
                     </tr>
                     </tbody>
 

@@ -1,0 +1,10 @@
+.bar-card {
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    text-align: center;
+    font-style: italic;
+    color: #282c34;
+}

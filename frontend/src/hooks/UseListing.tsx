@@ -4,7 +4,7 @@ import {Listing} from "../model/Listing";
 import {toast} from "react-toastify";
 
 
-export default function useListing(){
+export default function UseListing(){
 
     const [listings, setListings] = useState([])
 
@@ -13,7 +13,7 @@ export default function useListing(){
     }, [])
 
     const getAllListings = () => {
-        axios.get("/api/listings/")
+        axios.get("/api/listings")
             .then(response => response.data)
             .then(data => setListings(data))
             .catch((error) => toast.error(error.message))
