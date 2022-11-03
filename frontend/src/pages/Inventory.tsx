@@ -1,11 +1,11 @@
 import ListingGallery from "../components/Listing/ListingGallery";
 import React from "react";
-import useListing from "../hooks/UseListing";
+import UseListing from "../hooks/UseListing";
 import {NavLink} from "react-router-dom";
 
 export default function Inventory() {
 
-    const {listings, getAllListings, addListing ,deleteListing} = useListing()
+    const {listings, getAllListings, addListing ,deleteListing} = UseListing()
 
     return (
         <div>

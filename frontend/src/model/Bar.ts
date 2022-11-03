@@ -4,5 +4,4 @@ export type Bar ={
     location:string;
     description:string;
 
-
 }

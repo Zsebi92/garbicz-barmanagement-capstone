@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import { toast } from "react-toastify";
 import {Bar} from "../model/Bar";
 
-export default function useBar(){
+export default function UseBar(){
 
     const [bar, setBar] = useState([])
 
@@ -12,14 +12,14 @@ export default function useBar(){
     }, [])
 
     const getAllBars = () => {
-        axios.get("/api/bars/")
+        axios.get("/api/bars")
             .then(response => response.data)
             .then(data => setBar(data))
             .catch((error) => toast.error(error.message))
     }
 
     const addBar = (bar: Bar) => {
-        axios.post("/api/bars/", bar)
+        axios.post("/api/bars", bar)
             .then(() => toast.success("Bar wurde erfolgreich angelegt"))
             .catch((error) => toast.error(error.message))
             .then(getAllBars)
