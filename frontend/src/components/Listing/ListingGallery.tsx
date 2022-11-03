@@ -76,7 +76,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
                     <h1> Keine Getränke vorhanden </h1>
                     :
                     props.listings.map((m) =>
-                        <div className={"card"}>
+                        <div key={m.id} className={"card"}>
                             <ListingCard listing={m} deleteListing={props.deleteListing}/>
                         </div>)}
             </div>
