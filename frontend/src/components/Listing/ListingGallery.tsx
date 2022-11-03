@@ -72,7 +72,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
             </form>
 
             <div className={"cards"}>
-                {props.listings.length < 1 ?
+                {props.listings.length == 0 ?
                     <h1> Keine Getränke vorhanden </h1>
                     :
                     props.listings.map((m) =>

@@ -5,7 +5,7 @@ import {Bar} from "../model/Bar";
 
 export default function UseBar(){
 
-    const [bar, setBar] = useState([])
+    const [bars, setBars] = useState([])
 
     useEffect(() => {
         getAllBars()
@@ -14,23 +14,25 @@ export default function UseBar(){
     const getAllBars = () => {
         axios.get("/api/bars")
             .then(response => response.data)
-            .then(data => setBar(data))
+            .then(data => setBars(data))
             .catch((error) => toast.error(error.message))
     }
 
     const addBar = (bar: Bar) => {
         axios.post("/api/bars", bar)
             .then(() => toast.success("Bar wurde erfolgreich angelegt"))
-            .catch((error) => toast.error(error.message))
             .then(getAllBars)
+            .catch((error) => toast.error(error.message))
+
     }
 
     const deleteBar = (id: string) => {
         axios.delete("/api/bars/" +id)
             .then(() => toast.success("Bar erfolgreich gelösch"))
-            .catch((error) => toast.error(error.message))
             .then(getAllBars)
+            .catch((error) => toast.error(error.message))
+
     }
 
-    return {bar, addBar, getAllBars, deleteBar}
+    return {bars, addBar, getAllBars, deleteBar}
 }
