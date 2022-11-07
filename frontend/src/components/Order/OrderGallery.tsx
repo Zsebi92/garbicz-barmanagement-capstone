@@ -55,12 +55,12 @@ export default function OrderGallery(props: OrderGalleryProps) {
             </form>
 
             <div className={"cards"}>
-                {props.orders.length < 1 ?
+                {props.orders.length == 0 ?
                 <h1> Keine Bestellungen vorhanden </h1>
                 :
                 props.orders.map((o) =>
                 <div key={o.id} className={"card"}>
-                    <OrderCard order={o} deleteOrder={props.deleteOrder}/>
+                    <OrderCard order={o} deleteOrder={props.deleteOrder} />
                     <PrintingClass order={o}/>
                 </div>)}
             </div>

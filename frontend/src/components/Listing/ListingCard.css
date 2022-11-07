@@ -3,14 +3,12 @@
     flex-direction: column;
 }
 
-h2 {
+.listing-card {
     color: #282c34;
     font-weight: bolder;
 }
 
-
-p{
-    text-align: center;
-    font-style: italic;
-    color: #282c34;
+.title-1 {
+    font-weight: bolder;
 }
+

@@ -52,7 +52,7 @@ export default function BarGallery(props: BarGalleryProps) {
             </form>
 
             <div className={"cards"}>
-                {props.bars.length > 1 ?
+                {props.bars.length == 0 ?
                     <h1> Keine Bars vorhanden </h1>
                     :
                     props.bars.map((b) =>

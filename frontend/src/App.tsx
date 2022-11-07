@@ -8,10 +8,14 @@ import Inventory from "./pages/Inventory";
 import BarManagement from "./pages/BarManangement";
 import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
+import BarDetailsPage from "./pages/BarDetailsPage";
+import UseBar from "./hooks/UseBar";
 
 
 
 function App() {
+
+    const{updateBar, deleteBar} = UseBar();
 
     return (
         <div className="App">
@@ -32,6 +36,10 @@ function App() {
                         <Route path={"/bar-management"} element={<BarManagement/>}/>
                         <Route path={"/order-management"} element={<OrderManagement/>}/>
                         <Route path={"/staff-management"} element={<StaffManagement/>}/>
+                        <Route path={"/bars/:id"}
+                               element={<BarDetailsPage
+                                   updateBar={updateBar}
+                                   deleteBar={deleteBar}/>}/>
                     </Routes>
                 </HashRouter>
 

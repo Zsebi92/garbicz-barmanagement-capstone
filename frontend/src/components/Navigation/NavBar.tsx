@@ -1,32 +1,37 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import "./NavBar.css"
 
 export default function NavBar() {
     return (
-        <div>
+        <div className={"d-grid gap-2"}>
             <section>
-                <button>
-                    <NavLink to={"/inventory"}>Inventory</NavLink>
-                </button>
+                <Button variant={"primary"} size={"lg"}>
+                    <NavLink className={"link-name"} to={"/inventory"}>Inventory</NavLink>
+                </Button>
             </section>
 
             <section>
-                <button>
-                    <NavLink to={"/bar-management"}>Bar-Management</NavLink>
-                </button>
+                <Button variant={"primary"} size={"lg"}>
+                    <NavLink className={"link-name"} to={"/bar-management"}>Bar-Management</NavLink>
+                </Button>
             </section>
 
             <section>
-                <button>
-                    <NavLink to={"/order-management"}>Order-Management</NavLink>
-                </button>
+                <Button variant={"primary"} size={"lg"}>
+                    <NavLink className={"link-name"} to={"/order-management"}>Order-Management</NavLink>
+                </Button>
             </section>
 
             <section>
-                <button>
-                    <NavLink to={"/staff-management"}>Staff-Management</NavLink>
-                </button>
+                <Button variant={"primary"} size={"lg"}>
+                    <NavLink className={"link-name"} to={"/staff-management"}>Staff-Management</NavLink>
+                </Button>
             </section>
+
+
+
         </div>
     )
 }
