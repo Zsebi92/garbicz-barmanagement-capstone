@@ -13,7 +13,6 @@ export default function BarManagement() {
     return (
         <div>
             <h1>Bar-Management</h1>
-            <section><Button variant={"primary"} size={"lg"}><NavLink className={"link-name"} to={"/"}>Add Bar</NavLink></Button></section>
 
             <BarGallery bars={bars} getAllBars={getAllBars} addBar={addBar}  deleteBar={deleteBar}/>
 

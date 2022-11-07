@@ -3,9 +3,12 @@ import React, {useEffect, useRef} from "react";
 import {Order} from "../../model/Order";
 import Button from "react-bootstrap/Button";
 
+type PrintClassProps = {
+    order: Order,
+}
 
 
-export default function PrintingClass() {
+export default function PrintingClass(props: PrintClassProps) {
 
     useEffect(() => {
 
