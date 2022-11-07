@@ -7,6 +7,7 @@ export default function UseBar(){
 
     const [bars, setBars] = useState([])
 
+
     useEffect(() => {
         getAllBars()
     }, [])
@@ -26,6 +27,14 @@ export default function UseBar(){
 
     }
 
+    const updateBar = (bar : Bar) => {
+        axios.put("/api/bars" + bar)
+            .then(getAllBars)
+            .then(() => toast.success("Bar wurde geändert"))
+            .catch((error) => toast.error(error.message))
+            .then(getAllBars)
+    }
+
     const deleteBar = (id: string) => {
         axios.delete("/api/bars/" +id)
             .then(() => toast.success("Bar erfolgreich gelösch"))
@@ -34,5 +43,5 @@ export default function UseBar(){
 
     }
 
-    return {bars, addBar, getAllBars, deleteBar}
+    return {bars, addBar, getAllBars, updateBar ,deleteBar}
 }

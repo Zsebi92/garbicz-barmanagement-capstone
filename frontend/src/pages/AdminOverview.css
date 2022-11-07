@@ -1,0 +1,13 @@
+
+.logo {
+    max-width: 50%;
+    height: auto;
+}
+h1 {
+    font-weight: bolder;
+    font-size: 250%;
+}
+
+body {
+    background-color: lightskyblue;
+}

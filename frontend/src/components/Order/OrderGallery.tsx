@@ -60,7 +60,7 @@ export default function OrderGallery(props: OrderGalleryProps) {
                 :
                 props.orders.map((o) =>
                 <div key={o.id} className={"card"}>
-                    <OrderCard order={o} deleteOrder={props.deleteOrder}/>
+                    <OrderCard order={o} deleteOrder={props.deleteOrder} />
                     <PrintingClass order={o}/>
                 </div>)}
             </div>

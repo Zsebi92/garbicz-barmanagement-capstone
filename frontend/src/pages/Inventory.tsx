@@ -2,6 +2,7 @@ import ListingGallery from "../components/Listing/ListingGallery";
 import React from "react";
 import UseListing from "../hooks/UseListing";
 import {NavLink} from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 export default function Inventory() {
 
@@ -13,7 +14,7 @@ export default function Inventory() {
 
             <ListingGallery listings={listings} getAllListings={getAllListings} addListing={addListing} deleteListing={deleteListing} />
 
-            <section><button><NavLink to={"/"}>Back</NavLink></button></section>
+            <section><Button variant={"secondary"} size={"lg"}><NavLink className={"link-name"}  to={"/"}>Back</NavLink></Button></section>
 
         </div>
     )

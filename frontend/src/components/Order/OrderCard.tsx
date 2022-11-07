@@ -1,5 +1,7 @@
 import {Order} from "../../model/Order";
 import "./OrderCard.css"
+import {Card} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 
 type OrderCardProps = {
@@ -18,10 +20,14 @@ export default function OrderCard(props:OrderCardProps) {
 
     return (
         <div className={"order-card"}>
-            <p>Order ID: {props.order.id}</p>
-            <p>Bar: {props.order.barName} | Getränk: {props.order.listingName}</p>
-            <p>Liter: {props.order.listingSize} | Menge: {props.order.quantity}</p>
-            <button onClick={deleteHandler}>Löschen</button>
+            <Card className="text-center">
+                <Card.Header>Order ID: {props.order.id}</Card.Header>
+                <Card.Body>
+                    <Card.Title>Bar: {props.order.barName} | Getränk: {props.order.listingName}</Card.Title>
+                    <Card.Text>Liter: {props.order.listingSize} | Menge: {props.order.quantity}</Card.Text>
+            <Button variant={"primary"} onClick={deleteHandler}>Löschen</Button>
+                    </Card.Body>
+            </Card>
         </div>
     )
 }
