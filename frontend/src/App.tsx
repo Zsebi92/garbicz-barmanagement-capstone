@@ -10,12 +10,17 @@ import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
 import BarDetailsPage from "./pages/BarDetailsPage";
 import UseBar from "./hooks/UseBar";
+import AddBarPage from "./pages/AddBarPage";
+import AddListingPage from "./pages/AddListingPage";
+import ModalTest from "./components/Tests/ModalTest";
+import UseListing from "./hooks/UseListing";
 
 
 
 function App() {
 
-    const{updateBar, deleteBar} = UseBar();
+    const {updateBar, deleteBar} = UseBar();
+    const {listing, listings, addListing} = UseListing();
 
     return (
         <div className="App">
@@ -40,12 +45,13 @@ function App() {
                                element={<BarDetailsPage
                                    updateBar={updateBar}
                                    deleteBar={deleteBar}/>}/>
+                        <Route path={"/add-bar"} element={<AddBarPage/>}/>
+                        <Route path={"/add-listing"} element={<AddListingPage/>}/>
                     </Routes>
                 </HashRouter>
 
 
             </header>
-
 
 
         </div>

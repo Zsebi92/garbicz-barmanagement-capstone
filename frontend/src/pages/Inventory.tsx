@@ -3,16 +3,19 @@ import React from "react";
 import UseListing from "../hooks/UseListing";
 import {NavLink} from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import ModalTest from "../components/Tests/ModalTest";
 
 export default function Inventory() {
 
-    const {listings, getAllListings, addListing ,deleteListing} = UseListing()
+    const {listing, listings, addListing, deleteListing} = UseListing()
+
 
     return (
         <div>
             <h1>Inventory</h1>
 
-            <ListingGallery listings={listings} getAllListings={getAllListings} addListing={addListing} deleteListing={deleteListing} />
+            <section><Button variant={"priary"} size={"lg"}><ModalTest listing={listing} addListing={addListing}/></Button></section>
+            <ListingGallery listings={listings} deleteListing={deleteListing} />
 
             <section><Button variant={"secondary"} size={"lg"}><NavLink className={"link-name"}  to={"/"}>Back</NavLink></Button></section>
 

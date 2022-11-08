@@ -8,6 +8,8 @@ export default function UseListing(){
 
     const [listings, setListings] = useState([])
 
+    let listing!: Listing;
+
     useEffect(() => {
         getAllListings()
     }, [])
@@ -15,7 +17,7 @@ export default function UseListing(){
     const getAllListings = () => {
         axios.get("/api/listings")
             .then(response => response.data)
-            .then(data => setListings(data))
+            .then(listings => setListings(listings))
             .catch((error) => toast.error(error.message))
     }
 
@@ -35,6 +37,6 @@ export default function UseListing(){
             .then(getAllListings)
     }
 
-    return {listings, getAllListings, addListing, deleteListing }
+    return {listing, listings, getAllListings, addListing, deleteListing }
 
 }
