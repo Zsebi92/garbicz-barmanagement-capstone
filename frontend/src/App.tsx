@@ -10,12 +10,14 @@ import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
 import BarDetailsPage from "./pages/BarDetailsPage";
 import UseBar from "./hooks/UseBar";
+import UseListing from "./hooks/UseListing";
 
 
 
 function App() {
 
-    const{updateBar, deleteBar} = UseBar();
+    const {bar, bars, addBar, updateBar, deleteBar} = UseBar();
+    const {listing, listings, addListing} = UseListing();
 
     return (
         <div className="App">
@@ -45,7 +47,6 @@ function App() {
 
 
             </header>
-
 
 
         </div>
