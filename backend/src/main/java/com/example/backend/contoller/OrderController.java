@@ -1,5 +1,7 @@
 package com.example.backend.contoller;
 
+import com.example.backend.model.Bar;
+import com.example.backend.model.Listing;
 import com.example.backend.model.OrderHandler;
 import com.example.backend.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +31,8 @@ public class OrderController {
     }
 
     @PostMapping
-    public OrderHandler addOrder(@RequestBody OrderHandler orderHandler){
-        return service.addOrder(orderHandler);
+    public OrderHandler addOrder(@RequestBody OrderHandler orderHandler, Bar bar, Listing listing){
+        return service.addOrder(orderHandler, bar, listing);
     }
 
     @DeleteMapping("/{id}")

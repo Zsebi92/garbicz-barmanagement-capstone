@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Listing;
+import com.example.backend.model.ListingDTO;
 import com.example.backend.repository.InventoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,16 @@ public class ListingService {
                 .orElseThrow(() -> new NoSuchElementException("Not a single listing found with id: " +id));
     }
 
-    public Listing addListing(Listing listing) {
+    public Listing addListing(ListingDTO listingDTO) {
+        Listing listing = new Listing();
         listing.setId(idService.generateId());
+        listing.setName(listingDTO.getName());
+        listing.setLiter(listingDTO.getLiter());
+        listing.setGrossPurchase(listingDTO.getGrossPurchase());
+        listing.setPurchaseNet(listingDTO.getPurchaseNet());
+        listing.setBottlesPerBox(listingDTO.getBottlesPerBox());
+        listing.setBoxes(listingDTO.getBoxes());
+        listing.setPallets(listingDTO.getPallets());
 
         return repo.save(listing);
     }

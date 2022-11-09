@@ -1,6 +1,7 @@
 package com.example.backend.contoller;
 
 import com.example.backend.model.Bar;
+import com.example.backend.model.BarDTO;
 import com.example.backend.service.BarsService;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +28,8 @@ public class BarsController {
     }
 
     @PostMapping
-    public Bar addBar(@RequestBody Bar bar){
-        return service.addBar(bar);
+    public Bar addBar(@RequestBody BarDTO barDTO){
+        return service.addBar(barDTO);
     }
 
     @DeleteMapping("/{id}")

@@ -18,13 +18,16 @@ import java.util.NoSuchElementException;
 public class OrderService {
 
     private final OrderHandlerRepo repo;
-
+    private final InventoryRepo inventoryRepo;
+    private final BarsRepo barsRepo;
     private final IdService idService;
 
     @Autowired
     public OrderService(OrderHandlerRepo repo, InventoryRepo inventoryRepo, BarsRepo barsRepo ,IdService idService) {
         this.repo = repo;
         this.idService = idService;
+        this.inventoryRepo = inventoryRepo;
+        this.barsRepo = barsRepo;
     }
 
     public OrderHandler getOrderById(String id){
@@ -35,8 +38,10 @@ public class OrderService {
         return repo.findAll();
     }
 
-    public OrderHandler addOrder(OrderHandler orderHandler) {
+    public OrderHandler addOrder(OrderHandler orderHandler, Bar bar, Listing listing) {
         orderHandler.setId(idService.generateId());
+        orderHandler.setBarId(bar.getId());
+        orderHandler.setListingNameId(listing.getId());
 
         return repo.save(orderHandler);
     }
