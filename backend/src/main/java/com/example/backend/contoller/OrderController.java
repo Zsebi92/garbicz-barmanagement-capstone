@@ -3,6 +3,7 @@ package com.example.backend.contoller;
 import com.example.backend.model.Bar;
 import com.example.backend.model.Listing;
 import com.example.backend.model.OrderHandler;
+import com.example.backend.model.OrderHandlerDTO;
 import com.example.backend.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,8 +32,8 @@ public class OrderController {
     }
 
     @PostMapping
-    public OrderHandler addOrder(@RequestBody OrderHandler orderHandler, Bar bar, Listing listing){
-        return service.addOrder(orderHandler, bar, listing);
+    public OrderHandler addOrder(@RequestBody OrderHandlerDTO orderHandlerDTO){
+        return service.addOrder(orderHandlerDTO);
     }
 
     @DeleteMapping("/{id}")

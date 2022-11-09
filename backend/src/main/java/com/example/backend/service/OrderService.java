@@ -3,6 +3,7 @@ package com.example.backend.service;
 import com.example.backend.model.Bar;
 import com.example.backend.model.Listing;
 import com.example.backend.model.OrderHandler;
+import com.example.backend.model.OrderHandlerDTO;
 import com.example.backend.repository.BarsRepo;
 import com.example.backend.repository.InventoryRepo;
 import com.example.backend.repository.OrderHandlerRepo;
@@ -18,16 +19,13 @@ import java.util.NoSuchElementException;
 public class OrderService {
 
     private final OrderHandlerRepo repo;
-    private final InventoryRepo inventoryRepo;
-    private final BarsRepo barsRepo;
     private final IdService idService;
 
     @Autowired
-    public OrderService(OrderHandlerRepo repo, InventoryRepo inventoryRepo, BarsRepo barsRepo ,IdService idService) {
+    public OrderService(OrderHandlerRepo repo,IdService idService) {
         this.repo = repo;
         this.idService = idService;
-        this.inventoryRepo = inventoryRepo;
-        this.barsRepo = barsRepo;
+
     }
 
     public OrderHandler getOrderById(String id){
@@ -38,10 +36,13 @@ public class OrderService {
         return repo.findAll();
     }
 
-    public OrderHandler addOrder(OrderHandler orderHandler, Bar bar, Listing listing) {
+    public OrderHandler addOrder(OrderHandlerDTO orderHandlerDTO) {
+        OrderHandler orderHandler = new OrderHandler();
         orderHandler.setId(idService.generateId());
-        orderHandler.setBarId(bar.getId());
-        orderHandler.setListingNameId(listing.getId());
+        orderHandler.setBarId(orderHandlerDTO.getBarId());
+        orderHandler.setListingNameId(orderHandlerDTO.getListingNameId());
+        orderHandler.setListingSizeId(orderHandlerDTO.getListingSizeId());
+        orderHandler.setQuantityId(orderHandlerDTO.getQuantityId());
 
         return repo.save(orderHandler);
     }
