@@ -10,7 +10,7 @@ type ModalTestProps = {
 
 }
 
-export default function ModalTest(props: ModalTestProps) {
+export default function ModalAddListing(props: ModalTestProps) {
 
     const [listing, setListing] = useState(props.listing)
 

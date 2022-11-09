@@ -7,6 +7,8 @@ export default function UseBar(){
 
     const [bars, setBars] = useState([])
 
+    let bar!: Bar;
+
 
     useEffect(() => {
         getAllBars()
@@ -15,7 +17,7 @@ export default function UseBar(){
     const getAllBars = () => {
         axios.get("/api/bars")
             .then(response => response.data)
-            .then(data => setBars(data))
+            .then(bars => setBars(bars))
             .catch((error) => toast.error(error.message))
     }
 
@@ -43,5 +45,5 @@ export default function UseBar(){
 
     }
 
-    return {bars, addBar, getAllBars, updateBar ,deleteBar}
+    return {bar, bars, addBar, getAllBars, updateBar ,deleteBar}
 }
