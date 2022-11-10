@@ -18,7 +18,9 @@ public class OrderHandler {
     @Id
     String id;
     String barId;
-    String listingNameId;
-    String listingSizeId;
-    String quantityId;
+    String barName;
+    String listingId;
+    String listingName;
+    String listingSize;
+    String quantity;
 }

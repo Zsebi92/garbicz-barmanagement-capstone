@@ -1,7 +1,7 @@
 import {Bar} from "../../model/Bar";
 import React, {FormEvent, useState} from "react";
 import BarCard from "./BarCard";
-import {toast} from "react-toastify";
+
 
 type BarGalleryProps = {
     bars: Bar[];

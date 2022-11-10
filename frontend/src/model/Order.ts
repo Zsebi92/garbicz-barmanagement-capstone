@@ -1,7 +1,9 @@
 export type Order = {
     id?: string;
     barId: string;
-    listingNameId: string;
-    listingSizeId: string;
-    quantityId: string;
+    barName: string;
+    listingId: string;
+    listingName: string;
+    listingSize: string;
+    quantity: string;
 }

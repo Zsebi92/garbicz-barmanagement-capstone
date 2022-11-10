@@ -17,23 +17,27 @@ export default function ModalAddOrder(props: ModalAddOrder){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [barId, setBarId] = useState("")
     const [barName, setBarName] = useState("")
+    const [listingId, setListingId] = useState("")
     const [listingName, setListingName] = useState("")
     const [listingSize, setListingSize] = useState("")
     const [quantity, setQuantity] = useState("")
 
     const onCreate = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if (!barName || !listingName || !listingSize || !quantity) {
+        if (!barId || !listingId || !barName || !listingSize || !listingName || !quantity) {
             toast.error("Bitte ALLES ausfüllen!")
             return
         }
 
         const newOrder: Order = {
-            barId: barName,
-            listingNameId: listingName,
-            listingSizeId: listingSize,
-            quantityId: quantity
+            barId: barId,
+            barName: barName,
+            listingId: listingId,
+            listingName: listingName,
+            listingSize: listingSize,
+            quantity: quantity
         }
 
         setOrder(newOrder)
@@ -53,10 +57,10 @@ export default function ModalAddOrder(props: ModalAddOrder){
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={(event) => onCreate(event)}>
-                        <input name={"name"}
+                        <input name={"bar-name"}
                                placeholder={"Bar"}
                                onChange={event => setBarName(event.target.value)}/>
-                        <input name={"liter"}
+                        <input name={"listing-name"}
                                placeholder={"Listing"}
                                onChange={event => setListingName(event.target.value)}/>
                         <input name={"grossPurchase"}
