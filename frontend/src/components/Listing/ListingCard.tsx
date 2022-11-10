@@ -1,11 +1,10 @@
 import {Listing} from "../../model/Listing";
 import "./ListingCard.css"
-import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
 
 type ListingCardProps = {
-    listing: Listing;
+    listing: Listing
     deleteListing: (id: string) => void;
 }
 
@@ -20,13 +19,8 @@ export default function ListingCard(props: ListingCardProps) {
 
     return (
         <div className={"listing-card"}>
-            <Card className="text-center">
-                <Card.Header>{props.listing.name} {props.listing.liter} |
-                    EKN: {props.listing.purchaseNet} | Paletten: {props.listing.pallets} |
-                    EKB: {props.listing.grossPurchase} | Kisten: {props.listing.boxes} |
-                    Flaschen/Kiste: {props.listing.bottlesPerBox} <Button variant={"primary"} onClick={deleteHandler}>Löschen</Button></Card.Header>
+            <Button variant={"primary"} onClick={deleteHandler}>Delete</Button>
 
-            </Card>
         </div>
     )
 }

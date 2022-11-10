@@ -1,8 +1,8 @@
 import {Listing} from "../../model/Listing";
-import ListingCard from "./ListingCard";
 import "./ListingGallery.css";
 import React, {FormEvent, useState} from "react";
 import {Table} from "react-bootstrap";
+import ListingCard from "./ListingCard";
 
 
 type ListingGalleryProps = {
@@ -14,17 +14,17 @@ export default function ListingGallery(props: ListingGalleryProps) {
 
     return (
         <>
-            <Table striped bordered hover>
+            <Table striped bordered hover variant={"light"} responsive>
                 <thead>
                 <tr>
-                    <th>Getränk</th>
-                    <th> Getränke-Größe</th>
-                    <th> Einkaufs-Brutto</th>
-                    <th> Einkaufs-Netto</th>
-                    <th> Flaschen/Kiste</th>
-                    <th> Kisten</th>
-                    <th> Paletten</th>
-
+                    <th>Drink</th>
+                    <th>Drinksize</th>
+                    <th>Gross purchase</th>
+                    <th>Purchase net</th>
+                    <th>Bottles / box</th>
+                    <th>Boxes</th>
+                    <th>Pallets</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,6 +37,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
                     <td>{listing.bottlesPerBox}</td>
                     <td>{listing.boxes}</td>
                     <td>{listing.pallets}</td>
+                    <td><ListingCard listing={listing} deleteListing={props.deleteListing}/></td>
                 </tr>)}
                 </tbody>
 

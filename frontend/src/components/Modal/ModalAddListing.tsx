@@ -68,19 +68,19 @@ export default function ModalAddListing(props: ModalAddListing) {
                            placeholder={"Liter"}
                            onChange={event => setLiter(event.target.value)}/>
                     <input name={"grossPurchase"}
-                           placeholder={"EKB"}
+                           placeholder={"Gross purchase"}
                            onChange={event => setGrossPurchase(event.target.value)}/>
                     <input name={"purchaseNet"}
-                           placeholder={"EKN"}
+                           placeholder={"Purchase net"}
                            onChange={event => setPurchaseNet(event.target.value)}/>
                     <input name={"bottlesPerBox"}
-                           placeholder={"Flaschen/Kiste"}
+                           placeholder={"Bottles / box"}
                            onChange={event => setBottlesPerBox(event.target.value)}/>
                     <input name={"boxes"}
-                           placeholder={"Kisten"}
+                           placeholder={"Boxes"}
                            onChange={event => setBoxes(event.target.value)}/>
                     <input name={"pallets"}
-                           placeholder={"Paletten"}
+                           placeholder={"Pallets"}
                            onChange={event => setPallets(event.target.value)}/>
                         <Button type={"submit"} onClick={handleClose}>Hinzufügen</Button>
                         <Button variant="secondary" onClick={handleClose}>
