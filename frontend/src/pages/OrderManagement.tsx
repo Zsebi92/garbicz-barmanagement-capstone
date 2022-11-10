@@ -7,9 +7,10 @@ import ModalAddOrder from "../components/Modal/ModalAddOrder";
 
 
 
+
 export default function OrderManagement() {
 
-    const {order ,orders, addOrder,deleteOrder} = UseOrder()
+    const {order ,orders, getAllBars, addOrder,deleteOrder} = UseOrder()
 
     return (
         <div>

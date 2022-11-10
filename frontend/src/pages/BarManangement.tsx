@@ -14,10 +14,11 @@ export default function BarManagement() {
     return (
         <div>
             <h1>Bar-Management</h1>
-            <section><Button variant={"priary"} size={"lg"}><ModalAddBar bar={bar} addBar={addBar}/></Button></section>
-            <BarGallery bars={bars} getAllBars={getAllBars} addBar={addBar}  deleteBar={deleteBar}/>
-
             <section><Button variant={"secondary"} size={"lg"}><NavLink className={"link-name"} to={"/"}>Back</NavLink></Button></section>
+
+            <section><Button variant={"priary"} size={"lg"}><ModalAddBar bar={bar} addBar={addBar}/></Button></section>
+            <BarGallery bars={bars} deleteBar={deleteBar}/>
+
         </div>
 
     )

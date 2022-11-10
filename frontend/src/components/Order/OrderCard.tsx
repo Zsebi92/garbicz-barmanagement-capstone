@@ -24,7 +24,7 @@ export default function OrderCard(props:OrderCardProps) {
                 <Card.Header>Order ID: {props.order.id}</Card.Header>
                 <Card.Body>
                     <Card.Title>Bar: {props.order.barId} | Getränk: {props.order.listingId}</Card.Title>
-                    <Card.Text>Liter: {props.order.listingSize} | Menge: {props.order.quantity}</Card.Text>
+                    <Card.Text> Menge: {props.order.quantity}</Card.Text>
             <Button variant={"primary"} onClick={deleteHandler}>Löschen</Button>
                     </Card.Body>
             </Card>

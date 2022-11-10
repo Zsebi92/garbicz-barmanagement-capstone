@@ -15,6 +15,5 @@ public class OrderHandlerDTO {
     String barName;
     String listingId;
     String listingName;
-    String listingSize;
     String quantity;
 }

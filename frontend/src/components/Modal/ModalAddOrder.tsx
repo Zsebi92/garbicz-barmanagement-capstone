@@ -3,6 +3,8 @@ import React, {FormEvent, useState} from "react";
 import {toast} from "react-toastify";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import {Bar} from "../../model/Bar";
+
 
 type ModalAddOrder = {
     addOrder: (addOrder: Order) => void;
@@ -21,12 +23,11 @@ export default function ModalAddOrder(props: ModalAddOrder){
     const [barName, setBarName] = useState("")
     const [listingId, setListingId] = useState("")
     const [listingName, setListingName] = useState("")
-    const [listingSize, setListingSize] = useState("")
     const [quantity, setQuantity] = useState("")
 
     const onCreate = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if (!barId || !listingId || !barName || !listingSize || !listingName || !quantity) {
+        if ( !barName || !listingName || !quantity) {
             toast.error("Bitte ALLES ausfüllen!")
             return
         }
@@ -36,7 +37,6 @@ export default function ModalAddOrder(props: ModalAddOrder){
             barName: barName,
             listingId: listingId,
             listingName: listingName,
-            listingSize: listingSize,
             quantity: quantity
         }
 
@@ -57,15 +57,14 @@ export default function ModalAddOrder(props: ModalAddOrder){
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={(event) => onCreate(event)}>
+
+
                         <input name={"bar-name"}
                                placeholder={"Bar"}
                                onChange={event => setBarName(event.target.value)}/>
                         <input name={"listing-name"}
                                placeholder={"Listing"}
                                onChange={event => setListingName(event.target.value)}/>
-                        <input name={"grossPurchase"}
-                               placeholder={"Listing Size"}
-                               onChange={event => setListingSize(event.target.value)}/>
                         <input name={"purchaseNet"}
                                placeholder={"Quantity"}
                                onChange={event => setQuantity(event.target.value)}/>
