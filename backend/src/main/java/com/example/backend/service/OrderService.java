@@ -41,8 +41,6 @@ public class OrderService {
         orderHandler.setId(idService.generateId());
         orderHandler.setBarId(orderHandlerDTO.getBarId());
         orderHandler.setListingNameId(orderHandlerDTO.getListingNameId());
-        orderHandler.setListingSizeId(orderHandlerDTO.getListingSizeId());
-        orderHandler.setQuantityId(orderHandlerDTO.getQuantityId());
 
         return repo.save(orderHandler);
     }

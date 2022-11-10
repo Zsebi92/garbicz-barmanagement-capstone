@@ -23,8 +23,8 @@ export default function OrderCard(props:OrderCardProps) {
             <Card className="text-center">
                 <Card.Header>Order ID: {props.order.id}</Card.Header>
                 <Card.Body>
-                    <Card.Title>Bar: {props.order.barName} | Getränk: {props.order.listingName}</Card.Title>
-                    <Card.Text>Liter: {props.order.listingSize} | Menge: {props.order.quantity}</Card.Text>
+                    <Card.Title>Bar: {props.order.barId} | Getränk: {props.order.listingNameId}</Card.Title>
+                    <Card.Text>Liter: {props.order.listingSizeId} | Menge: {props.order.quantityId}</Card.Text>
             <Button variant={"primary"} onClick={deleteHandler}>Löschen</Button>
                     </Card.Body>
             </Card>

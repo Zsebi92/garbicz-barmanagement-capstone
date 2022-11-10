@@ -4,13 +4,13 @@ import Modal from 'react-bootstrap/Modal';
 import {toast} from "react-toastify";
 import {Listing} from "../../model/Listing";
 
-type ModalTestProps = {
-    addListing: (addListing: Listing) => void
+type ModalAddListing = {
+    addListing: (addListing: Listing) => void;
     listing: Listing
 
-}
+};
 
-export default function ModalAddListing(props: ModalTestProps) {
+export default function ModalAddListing(props: ModalAddListing) {
 
     const [listing, setListing] = useState(props.listing)
 
@@ -90,5 +90,5 @@ export default function ModalAddListing(props: ModalTestProps) {
                 </Modal.Body>
             </Modal>
         </>
-    );
+    )
 }
