@@ -1,7 +1,6 @@
 import {Bar} from "../../model/Bar";
 import React, {FormEvent, useState} from "react";
 import BarCard from "./BarCard";
-import ListingCard from "../Listing/ListingCard";
 import {Table} from "react-bootstrap";
 
 
@@ -30,7 +29,6 @@ export default function BarGallery(props: BarGalleryProps) {
                         <td>{bar.name}</td>
                         <td>{bar.location}</td>
                         <td>{bar.description}</td>
-
                         <td><BarCard bar={bar} deleteBar={props.deleteBar}/></td>
                     </tr>)}
                 </tbody>

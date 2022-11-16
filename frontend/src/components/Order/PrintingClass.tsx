@@ -7,7 +7,6 @@ type PrintClassProps = {
     order: Order,
 }
 
-
 export default function PrintingClass(props: PrintClassProps) {
 
     useEffect(() => {
@@ -15,7 +14,6 @@ export default function PrintingClass(props: PrintClassProps) {
     }, [])
 
     const componentRef = useRef<HTMLDivElement>(null)
-
 
 
     return (
@@ -26,7 +24,6 @@ export default function PrintingClass(props: PrintClassProps) {
 
             <div ref={componentRef}>
                 <header>
-
 
                 </header>
             </div>

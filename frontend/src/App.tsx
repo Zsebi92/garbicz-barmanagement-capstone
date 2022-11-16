@@ -10,16 +10,15 @@ import OrderManagement from "./pages/OrderManagement";
 import StaffManagement from "./pages/StaffManagement";
 import BarDetailsPage from "./pages/BarDetailsPage";
 import UseBar from "./hooks/UseBar";
-import UseListing from "./hooks/UseListing";
-import UseOrder from "./hooks/UseOrder";
+
 
 
 
 function App() {
 
-    const {bar, bars, addBar, updateBar, deleteBar} = UseBar();
-    const {listing, listings, addListing} = UseListing();
-    const {order, orders, addOrder, deleteOrder} = UseOrder();
+    const {updateBar, deleteBar} = UseBar();
+
+
 
     return (
         <div className="App">

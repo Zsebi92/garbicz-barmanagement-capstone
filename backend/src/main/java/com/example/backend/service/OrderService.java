@@ -1,6 +1,8 @@
 package com.example.backend.service;
+import com.example.backend.model.BarDTO;
 import com.example.backend.model.OrderHandler;
 import com.example.backend.model.OrderHandlerDTO;
+import com.example.backend.repository.BarsRepo;
 import com.example.backend.repository.OrderHandlerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,6 +18,7 @@ public class OrderService {
     private final OrderHandlerRepo repo;
     private final IdService idService;
 
+
     @Autowired
     public OrderService(OrderHandlerRepo repo,IdService idService) {
         this.repo = repo;
@@ -27,6 +30,7 @@ public class OrderService {
         return repo.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Not a single order find by id" +id));
     }
+
     public List<OrderHandler> getAllOrders(){
         return repo.findAll();
     }
@@ -34,12 +38,11 @@ public class OrderService {
     public OrderHandler addOrder(OrderHandlerDTO orderHandlerDTO) {
         OrderHandler orderHandler = new OrderHandler();
         orderHandler.setId(idService.generateId());
-        orderHandler.setBarId(orderHandlerDTO.getBarId());
-        orderHandler.setListingId(orderHandlerDTO.getListingId());
-        orderHandler.setBarName(orderHandlerDTO.getBarName());
-        orderHandler.setListingName(orderHandlerDTO.getListingName());
 
-        orderHandler.setQuantity(orderHandler.getQuantity());
+        orderHandler.setBarName(orderHandlerDTO.getBarName());
+
+        orderHandler.setListingName(orderHandlerDTO.getListingName());
+        orderHandler.setQuantity(orderHandlerDTO.getQuantity());
 
         return repo.save(orderHandler);
     }

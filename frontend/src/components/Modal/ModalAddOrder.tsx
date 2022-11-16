@@ -3,12 +3,15 @@ import React, {FormEvent, useState} from "react";
 import {toast} from "react-toastify";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
+import {Bar} from "../../model/Bar";
+import {Listing} from "../../model/Listing";
 
 
 type ModalAddOrder = {
     addOrder: (addOrder: Order) => void;
     order: Order;
+    bars: Bar[];
+    listings: Listing[];
 }
 
 export default function ModalAddOrder(props: ModalAddOrder){
@@ -20,23 +23,21 @@ export default function ModalAddOrder(props: ModalAddOrder){
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const [barId, setBarId] = useState("")
     const [barName, setBarName] = useState("")
-    const [listingId, setListingId] = useState("")
     const [listingName, setListingName] = useState("")
+    const [quantity, setQuantity] = useState("")
 
     const onCreate = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if ( !barName || !listingName) {
+        if ( !barName || !listingName || !quantity) {
             toast.error("Bitte ALLES ausfüllen!")
             return
         }
 
         const newOrder: Order = {
-            barId: barId,
-            barName: barName,
-            listingId: listingId,
-            listingName: listingName,
+            barName,
+            listingName,
+            quantity
         }
 
         setOrder(newOrder)
@@ -44,6 +45,19 @@ export default function ModalAddOrder(props: ModalAddOrder){
             props.addOrder(newOrder)
         }
     }
+
+    const mapBars = () => {
+        return props.bars.map((b) =>
+            <option value={b.name}>{b.name}</option>)
+
+    }
+
+    const mapListingName = () => {
+        return props.listings.map((l) =>
+            <option value={l.name + l.liter}>{l.name + l.liter}</option>)
+    }
+
+
 
     return(
         <>
@@ -59,12 +73,18 @@ export default function ModalAddOrder(props: ModalAddOrder){
 
                         <select aria-label="Default select example" onChange={event => setBarName(event.target.value)}>
                         <option>Wählen Sie eine Bar aus</option>
-                        <option value="Weinbar">Weinbar</option>
+                            {mapBars()}
                         </select>
 
-                        <input name={"listing-name"}
-                               placeholder={"Listing"}
-                               onChange={event => setListingName(event.target.value)}/>
+                        <select aria-label="Default select example" onChange={event => setListingName(event.target.value)}>
+                            <option>Wählen Sie ein Getränk aus</option>
+                            {mapListingName()}
+                        </select>
+
+                        <input name={"quantity"}
+                               placeholder={"Menge in Kisten "}
+                               onChange={event => setQuantity(event.target.value)}/>
+
 
                         <Button type={"submit"} onClick={handleClose}>Hinzufügen</Button>
                         <Button variant="secondary" onClick={handleClose}>
