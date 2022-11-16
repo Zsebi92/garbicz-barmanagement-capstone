@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Bar;
+import com.example.backend.model.BarDTO;
 import com.example.backend.repository.BarsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,12 @@ public class BarsService {
                 .orElseThrow(() -> new NoSuchElementException("Not a single Bar found with id: " +id));
     }
 
-    public Bar addBar(Bar bar){
+    public Bar addBar(BarDTO barDTO){
+        Bar bar = new Bar();
         bar.setId(idService.generateId());
+        bar.setName(barDTO.getName());
+        bar.setLocation(barDTO.getLocation());
+        bar.setDescription(barDTO.getDescription());
 
         return repo.save(bar);
     }

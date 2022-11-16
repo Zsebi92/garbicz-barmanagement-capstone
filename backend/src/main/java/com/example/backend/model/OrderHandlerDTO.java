@@ -4,23 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
 @Builder
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-@Document("order")
-public class OrderHandler {
+@AllArgsConstructor
+public class OrderHandlerDTO {
 
-
-    @Id
-    String id;
     String barId;
     String barName;
     String listingId;
     String listingName;
-    String listingSize;
     String quantity;
 }

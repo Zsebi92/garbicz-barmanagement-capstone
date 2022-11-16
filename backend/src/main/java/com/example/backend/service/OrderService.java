@@ -3,6 +3,7 @@ package com.example.backend.service;
 import com.example.backend.model.Bar;
 import com.example.backend.model.Listing;
 import com.example.backend.model.OrderHandler;
+import com.example.backend.model.OrderHandlerDTO;
 import com.example.backend.repository.BarsRepo;
 import com.example.backend.repository.InventoryRepo;
 import com.example.backend.repository.OrderHandlerRepo;
@@ -18,13 +19,13 @@ import java.util.NoSuchElementException;
 public class OrderService {
 
     private final OrderHandlerRepo repo;
-
     private final IdService idService;
 
     @Autowired
-    public OrderService(OrderHandlerRepo repo, InventoryRepo inventoryRepo, BarsRepo barsRepo ,IdService idService) {
+    public OrderService(OrderHandlerRepo repo,IdService idService) {
         this.repo = repo;
         this.idService = idService;
+
     }
 
     public OrderHandler getOrderById(String id){
@@ -35,8 +36,15 @@ public class OrderService {
         return repo.findAll();
     }
 
-    public OrderHandler addOrder(OrderHandler orderHandler) {
+    public OrderHandler addOrder(OrderHandlerDTO orderHandlerDTO) {
+        OrderHandler orderHandler = new OrderHandler();
         orderHandler.setId(idService.generateId());
+        orderHandler.setBarId(orderHandlerDTO.getBarId());
+        orderHandler.setListingId(orderHandlerDTO.getListingId());
+        orderHandler.setBarName(orderHandlerDTO.getBarName());
+        orderHandler.setListingName(orderHandlerDTO.getListingName());
+
+        orderHandler.setQuantity(orderHandler.getQuantity());
 
         return repo.save(orderHandler);
     }

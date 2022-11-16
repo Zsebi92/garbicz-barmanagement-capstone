@@ -1,13 +1,15 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {toast} from "react-toastify";
-import "../model/Order"
 import {Order} from "../model/Order";
 
 
 export default function UseOrder(){
 
-    const [order, setOrder] = useState([])
+    const [orders, setOrder] = useState([])
+    const [bars, setBars] = useState([])
+
+    let order!: Order;
 
     useEffect(() => {
         getAllOrders()
@@ -16,9 +18,17 @@ export default function UseOrder(){
     const getAllOrders = () => {
         axios.get("/api/orders")
             .then(response => response.data)
-            .then(data => setOrder(data))
+            .then(orders => setOrder(orders))
             .catch((error) => toast.error(error.message))
     }
+
+    const getAllBars = () => {
+        axios.get("/api/bars")
+            .then(response => response.data)
+            .then(bars => setBars(bars))
+            .catch((error) => toast.error(error.message))
+    }
+
 
     const addOrder = (order: Order) => {
         axios.post("/api/orders", order)
@@ -34,5 +44,5 @@ export default function UseOrder(){
             .then(getAllOrders)
     }
 
-    return {order, getAllOrders, addOrder, deleteOrder}
+    return {order ,orders, getAllOrders, getAllBars, addOrder, deleteOrder}
 }

@@ -55,13 +55,13 @@ export default function ModalAddBar(props: AddBarProps) {
                 <Modal.Body>
                     <form onSubmit={(event) => onCreate(event)}>
                         <input name={"name"}
-                               placeholder={"Name"}
+                               placeholder={"Bar name"}
                                onChange={event => setName(event.target.value)}/>
                         <input name={"location"}
-                               placeholder={"Ort"}
+                               placeholder={"Location"}
                                onChange={event => setLocation(event.target.value)}/>
                         <input name={"description"}
-                               placeholder={"Beschreibung"}
+                               placeholder={"Description"}
                                onChange={event => setDescription(event.target.value)}/>
                         <Button type={"submit"} onClick={handleClose}>Hinzufügen</Button>
                         <Button variant="secondary" onClick={handleClose}>Back</Button>

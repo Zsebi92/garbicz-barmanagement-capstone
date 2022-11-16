@@ -1,6 +1,7 @@
 package com.example.backend.contoller;
 
 import com.example.backend.model.Listing;
+import com.example.backend.model.ListingDTO;
 import com.example.backend.service.ListingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +30,8 @@ public class ListingController {
     }
 
     @PostMapping
-    public Listing addListing(@RequestBody Listing listing){
-        return service.addListing(listing);
+    public Listing addListing(@RequestBody ListingDTO listingDTO){
+        return service.addListing(listingDTO);
     }
 
     @DeleteMapping("/{id}")

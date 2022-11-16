@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Bar;
+import com.example.backend.model.BarDTO;
 import com.example.backend.repository.BarsRepo;
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +43,7 @@ class Bars_ServiceTest {
         when(repo.save(dummyBar)).thenReturn(dummyBar);
 
         // WHEN
-        Bar actual = service.addBar(dummyBar);
+        Bar actual = service.addBar(new BarDTO());
 
         // THEN
         verify(repo).save(dummyBar);

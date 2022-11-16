@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Listing;
+import com.example.backend.model.ListingDTO;
 import com.example.backend.repository.InventoryRepo;
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +43,7 @@ class ListingServiceTest {
         when(repo.save(dummyListing)).thenReturn(dummyListing);
 
         // WHEN
-        Listing actual = service.addListing(dummyListing);
+        Listing actual = service.addListing(new ListingDTO());
 
         // THEN
         verify(repo).save(dummyListing);
