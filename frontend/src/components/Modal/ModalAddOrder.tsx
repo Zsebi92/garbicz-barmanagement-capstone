@@ -3,7 +3,7 @@ import React, {FormEvent, useState} from "react";
 import {toast} from "react-toastify";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import {Bar} from "../../model/Bar";
+
 
 
 type ModalAddOrder = {
@@ -12,6 +12,7 @@ type ModalAddOrder = {
 }
 
 export default function ModalAddOrder(props: ModalAddOrder){
+
 
     const [order, setOrder] = useState(props.order)
 
@@ -23,11 +24,10 @@ export default function ModalAddOrder(props: ModalAddOrder){
     const [barName, setBarName] = useState("")
     const [listingId, setListingId] = useState("")
     const [listingName, setListingName] = useState("")
-    const [quantity, setQuantity] = useState("")
 
     const onCreate = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if ( !barName || !listingName || !quantity) {
+        if ( !barName || !listingName) {
             toast.error("Bitte ALLES ausfüllen!")
             return
         }
@@ -37,7 +37,6 @@ export default function ModalAddOrder(props: ModalAddOrder){
             barName: barName,
             listingId: listingId,
             listingName: listingName,
-            quantity: quantity
         }
 
         setOrder(newOrder)
@@ -58,16 +57,15 @@ export default function ModalAddOrder(props: ModalAddOrder){
                 <Modal.Body>
                     <form onSubmit={(event) => onCreate(event)}>
 
+                        <select aria-label="Default select example" onChange={event => setBarName(event.target.value)}>
+                        <option>Wählen Sie eine Bar aus</option>
+                        <option value="Weinbar">Weinbar</option>
+                        </select>
 
-                        <input name={"bar-name"}
-                               placeholder={"Bar"}
-                               onChange={event => setBarName(event.target.value)}/>
                         <input name={"listing-name"}
                                placeholder={"Listing"}
                                onChange={event => setListingName(event.target.value)}/>
-                        <input name={"purchaseNet"}
-                               placeholder={"Quantity"}
-                               onChange={event => setQuantity(event.target.value)}/>
+
                         <Button type={"submit"} onClick={handleClose}>Hinzufügen</Button>
                         <Button variant="secondary" onClick={handleClose}>
                             Back

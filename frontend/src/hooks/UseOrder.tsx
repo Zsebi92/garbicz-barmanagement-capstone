@@ -7,7 +7,7 @@ import {Order} from "../model/Order";
 export default function UseOrder(){
 
     const [orders, setOrder] = useState([])
-    const [bars, setBars] = useState([])
+    const [bar, setBar] = useState([])
 
     let order!: Order;
 
@@ -25,7 +25,7 @@ export default function UseOrder(){
     const getAllBars = () => {
         axios.get("/api/bars")
             .then(response => response.data)
-            .then(bars => setBars(bars))
+            .then(bar => setBar(bar))
             .catch((error) => toast.error(error.message))
     }
 
@@ -44,5 +44,5 @@ export default function UseOrder(){
             .then(getAllOrders)
     }
 
-    return {order ,orders, getAllOrders, getAllBars, addOrder, deleteOrder}
+    return {order ,orders, bar, getAllOrders, getAllBars, addOrder, deleteOrder}
 }

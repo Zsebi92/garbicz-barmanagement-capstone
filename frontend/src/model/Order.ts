@@ -4,5 +4,4 @@ export type Order = {
     barName: string;
     listingId: string;
     listingName: string;
-    quantity: string;
 }

@@ -17,15 +17,19 @@ export default function PrintingClass(props: PrintClassProps) {
     const componentRef = useRef<HTMLDivElement>(null)
 
 
+
     return (
         <div>
             <ReactToPrint
             trigger={() => <Button variant={"primary"}>Print</Button>}
-            content={() => componentRef.current}
-            />
-            <div ref={componentRef}>
+            content={() => componentRef.current}/>
 
-                </div>
+            <div ref={componentRef}>
+                <header>
+
+
+                </header>
+            </div>
 
 
         </div>

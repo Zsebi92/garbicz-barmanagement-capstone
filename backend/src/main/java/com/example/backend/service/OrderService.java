@@ -1,11 +1,6 @@
 package com.example.backend.service;
-
-import com.example.backend.model.Bar;
-import com.example.backend.model.Listing;
 import com.example.backend.model.OrderHandler;
 import com.example.backend.model.OrderHandlerDTO;
-import com.example.backend.repository.BarsRepo;
-import com.example.backend.repository.InventoryRepo;
 import com.example.backend.repository.OrderHandlerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
