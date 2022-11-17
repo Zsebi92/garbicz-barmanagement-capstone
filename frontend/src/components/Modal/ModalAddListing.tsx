@@ -12,7 +12,7 @@ type ModalAddListing = {
 
 export default function ModalAddListing(props: ModalAddListing) {
 
-    const [listing, setListing] = useState(props.listing)
+    const [, setListing] = useState(props.listing)
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
