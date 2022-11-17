@@ -11,9 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class OrderHandlerDTO {
 
-    String barId;
     String barName;
-    String listingId;
     String listingName;
     String quantity;
+
+
+
 }
