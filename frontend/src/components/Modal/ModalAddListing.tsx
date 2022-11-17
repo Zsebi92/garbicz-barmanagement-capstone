@@ -4,13 +4,13 @@ import Modal from 'react-bootstrap/Modal';
 import {toast} from "react-toastify";
 import {Listing} from "../../model/Listing";
 
-type ModalAddListing = {
+type ModalAddListingProps = {
     addListing: (addListing: Listing) => void;
     listing: Listing
 
 };
 
-export default function ModalAddListing(props: ModalAddListing) {
+export default function ModalAddListing(props: ModalAddListingProps) {
 
     const [, setListing] = useState(props.listing)
 
