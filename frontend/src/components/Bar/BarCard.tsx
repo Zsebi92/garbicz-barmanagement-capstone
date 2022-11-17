@@ -1,6 +1,5 @@
 import {Bar} from "../../model/Bar";
 import "./BarCard.css"
-import {useNavigate} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 
@@ -11,7 +10,7 @@ type BarCardProps = {
 
 export default function BarCard(props: BarCardProps) {
 
-    const navigate = useNavigate()
+
 
     const deleteHandler = () => {
         if (props.bar.id === undefined) {

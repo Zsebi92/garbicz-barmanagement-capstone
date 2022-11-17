@@ -1,6 +1,6 @@
 import {Listing} from "../../model/Listing";
 import "./ListingGallery.css";
-import React, {FormEvent, useState} from "react";
+import React from "react";
 import {Table} from "react-bootstrap";
 import ListingCard from "./ListingCard";
 
