@@ -17,7 +17,7 @@ type ModalAddOrder = {
 export default function ModalAddOrder(props: ModalAddOrder){
 
 
-    const [order, setOrder] = useState(props.order)
+    const [, setOrder] = useState(props.order)
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
