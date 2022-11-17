@@ -11,7 +11,7 @@ type AddBarProps = {
 
 export default function ModalAddBar(props: AddBarProps) {
 
-    const [bar, setBar] = useState(props.bar)
+    const [bar ,setBar] = useState(props.bar)
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -61,7 +61,7 @@ export default function ModalAddBar(props: AddBarProps) {
                                placeholder={"Location"}
                                onChange={event => setLocation(event.target.value)}/>
                         <input name={"description"}
-                               placeholder={"Description"}
+                               placeholder={"Descriptionl"}
                                onChange={event => setDescription(event.target.value)}/>
                         <Button type={"submit"} onClick={handleClose}>Hinzufügen</Button>
                         <Button variant="secondary" onClick={handleClose}>Back</Button>

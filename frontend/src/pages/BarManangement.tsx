@@ -9,7 +9,7 @@ import ModalAddBar from "../components/Modal/ModalAddBar";
 
 export default function BarManagement() {
 
-    const {bar, bars, addBar,  getAllBars, deleteBar} = UseBar()
+    const {bar, bars, addBar, deleteBar} = UseBar()
 
     return (
         <div>

@@ -1,5 +1,5 @@
 import {Bar} from "../../model/Bar";
-import React, {FormEvent, useState} from "react";
+import React  from "react";
 import BarCard from "./BarCard";
 import {Table} from "react-bootstrap";
 

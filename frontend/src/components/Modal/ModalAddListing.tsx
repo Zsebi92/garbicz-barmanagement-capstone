@@ -19,7 +19,7 @@ export default function ModalAddListing(props: ModalAddListing) {
     const handleShow = () => setShow(true);
 
     const [name, setName] = useState("")
-    const [liter, setLiter] = useState("")
+    const [liter, setliter] = useState("")
     const [grossPurchase, setGrossPurchase] = useState("")
     const [purchaseNet, setPurchaseNet] = useState("")
     const [bottlesPerBox, setBottlesPerBox] = useState("")
@@ -65,8 +65,8 @@ export default function ModalAddListing(props: ModalAddListing) {
                            placeholder={"Name"}
                            onChange={event => setName(event.target.value)}/>
                     <input name={"liter"}
-                           placeholder={"Liter"}
-                           onChange={event => setLiter(event.target.value)}/>
+                            placeholder={"liter"}
+                            onChange={event => setliter(event.target.value)}/>
                     <input name={"grossPurchase"}
                            placeholder={"Gross purchase"}
                            onChange={event => setGrossPurchase(event.target.value)}/>
