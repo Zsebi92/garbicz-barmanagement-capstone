@@ -10,6 +10,8 @@ import UseListing from "../hooks/UseListing";
 
 
 
+
+
 export default function OrderManagement() {
 
     const {order ,orders, addOrder,deleteOrder} = UseOrder()
@@ -21,10 +23,13 @@ export default function OrderManagement() {
         <div>
             <h1>Order-Management</h1>
 
+            <section><Button variant={"secondary"} size={"lg"}><NavLink className={"link-name"} to={"/"}>Back</NavLink></Button></section>
             <section><Button variant={"priary"} size={"lg"}><ModalAddOrder listings={listings} bars={bars} order={order} addOrder={addOrder}/></Button></section>
+
             <OrderGallery orders={orders} deleteOrder={deleteOrder}/>
 
-            <section><Button variant={"secondary"} size={"lg"}><NavLink className={"link-name"} to={"/"}>Back</NavLink></Button></section>
+
+
         </div>
     )
 }

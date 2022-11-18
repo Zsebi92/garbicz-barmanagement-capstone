@@ -2,6 +2,9 @@ import {Order} from "../../model/Order";
 import OrderCard from "./OrderCard";
 import PrintingClass from "./PrintingClass";
 import "./OrderGallery.css"
+import {Table} from "react-bootstrap";
+import {useState} from "react";
+import Button from "react-bootstrap/Button";
 
 
 type OrderGalleryProps = {
@@ -10,21 +13,39 @@ type OrderGalleryProps = {
 
 }
 
+
+
 export default function OrderGallery(props: OrderGalleryProps) {
+
+    const [show, setShow] = useState(false);
 
     return (
         <>
+            <Table striped bordered hover variant={"light"} responsive>
+            <thead>
+            <tr>
+                <th>OrderId</th>
+                <th>Bar</th>
+                <th>Listing</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {props.orders.map((order) =>
+            <tr>
+                <td>{order.id}</td>
+                <td>{order.barName}</td>
+                <td>{order.listingName}</td>
+                <td>{order.quantity}</td>
+                <td><OrderCard order={order} deleteOrder={props.deleteOrder}/><Button variant={"primary"} onClick={() => {setShow(!show)}}>{show?"Hide Order": "Show Order"}</Button>
 
-            <div className={"cards"}>
-                {props.orders.length === 0 ?
-                    <h1> Keine Bestellungen vorhanden </h1>
-                    :
-                    props.orders.map((o) =>
-                        <div key={o.id} className={"card"}>
-                            <OrderCard  order={o} deleteOrder={props.deleteOrder}/>
-                            <PrintingClass order={o}/>
-                        </div>)}
-            </div>
+                    {show && <PrintingClass order={order}/>}</td>
+
+            </tr>)}
+            </tbody>
+
+            </Table>
         </>
     )
 }
