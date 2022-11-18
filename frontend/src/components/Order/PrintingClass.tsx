@@ -53,6 +53,21 @@ export default function PrintingClass(props: PrintClassProps) {
                         <th>{props.order.listingName}</th>
                         <th>{props.order.quantity}</th>
                         </tr>
+
+                        <section className={"signing-admin"}>
+                            _____________________________
+                            <h5>Unterschrift Lager</h5>
+                        </section>
+
+                        <section className={"signing-deliver"}>
+                            _____________________________
+                            <h5>Unterschrift Lieferant </h5>
+                        </section>
+
+                        <section className={"signing-deliver"}>
+                            _____________________________
+                            <h5>Unterschrift Bar </h5>
+                        </section>
                         </tbody>
                     </Table>
 
