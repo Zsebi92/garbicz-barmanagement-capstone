@@ -2,6 +2,7 @@ import {Order} from "../../model/Order";
 import OrderCard from "./OrderCard";
 import PrintingClass from "./PrintingClass";
 import "./OrderGallery.css"
+import {Table} from "react-bootstrap";
 
 
 type OrderGalleryProps = {
@@ -14,17 +15,28 @@ export default function OrderGallery(props: OrderGalleryProps) {
 
     return (
         <>
+            <Table striped bordered hover variant={"light"} responsive>
+            <thead>
+            <tr>
+                <th>OrderId</th>
+                <th>Bar</th>
+                <th>Listing</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {props.orders.map((order) =>
+            <tr>
+                <td>{order.id}</td>
+                <td>{order.barName}</td>
+                <td>{order.listingName}</td>
+                <td>{order.quantity}</td>
+                <td><OrderCard order={order} deleteOrder={props.deleteOrder}/></td>
+            </tr>)}
+            </tbody>
 
-            <div className={"cards"}>
-                {props.orders.length === 0 ?
-                    <h1> Keine Bestellungen vorhanden </h1>
-                    :
-                    props.orders.map((o) =>
-                        <div key={o.id} className={"card"}>
-                            <OrderCard  order={o} deleteOrder={props.deleteOrder}/>
-                            <PrintingClass order={o}/>
-                        </div>)}
-            </div>
+            </Table>
         </>
     )
 }
