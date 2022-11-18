@@ -22,6 +22,7 @@ export default function OrderCard(props:OrderCardProps) {
         <div className={"order-card"}>
             <Card className="text-center">
                     <Button variant={"primary"} onClick={deleteHandler}>Löschen</Button>
+
             </Card>
         </div>
     )

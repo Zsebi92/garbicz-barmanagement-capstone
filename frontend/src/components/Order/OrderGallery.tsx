@@ -3,7 +3,8 @@ import OrderCard from "./OrderCard";
 import PrintingClass from "./PrintingClass";
 import "./OrderGallery.css"
 import {Table} from "react-bootstrap";
-import ReactToPrint from "react-to-print";
+import {useState} from "react";
+import Button from "react-bootstrap/Button";
 
 
 type OrderGalleryProps = {
@@ -12,7 +13,11 @@ type OrderGalleryProps = {
 
 }
 
+
+
 export default function OrderGallery(props: OrderGalleryProps) {
+
+    const [show, setShow] = useState(false);
 
     return (
         <>
@@ -33,7 +38,10 @@ export default function OrderGallery(props: OrderGalleryProps) {
                 <td>{order.barName}</td>
                 <td>{order.listingName}</td>
                 <td>{order.quantity}</td>
-                <td><PrintingClass order={order}/><OrderCard order={order} deleteOrder={props.deleteOrder}/></td>
+                <td><Button variant={"primary"} onClick={() => {setShow(!show)}}>{show?"Hide Order": "Show Order"}</Button>
+                    <OrderCard order={order} deleteOrder={props.deleteOrder}/>
+                    {show && <PrintingClass order={order}/>}</td>
+
             </tr>)}
             </tbody>
 

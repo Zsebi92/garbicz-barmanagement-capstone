@@ -1,5 +1,5 @@
 import ReactToPrint from "react-to-print";
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Order} from "../../model/Order";
 import Button from "react-bootstrap/Button";
 import "../Order/PrintincClass.css"
@@ -17,12 +17,13 @@ export default function PrintingClass(props: PrintClassProps) {
 
     const componentRef = useRef<HTMLDivElement>(null)
 
+    const [show, setShow] = useState(false)
 
 
     return (
         <div>
             <ReactToPrint
-            trigger={() => <Button variant={"primary"}>Print</Button>}
+            trigger={() => <Button variant={"primary"} onClick={()=>{setShow(!show)}}>Print</Button>}
             content={() => componentRef.current}/>
 
             <div ref={componentRef}>
