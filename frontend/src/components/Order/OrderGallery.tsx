@@ -3,6 +3,7 @@ import OrderCard from "./OrderCard";
 import PrintingClass from "./PrintingClass";
 import "./OrderGallery.css"
 import {Table} from "react-bootstrap";
+import ReactToPrint from "react-to-print";
 
 
 type OrderGalleryProps = {
@@ -32,7 +33,7 @@ export default function OrderGallery(props: OrderGalleryProps) {
                 <td>{order.barName}</td>
                 <td>{order.listingName}</td>
                 <td>{order.quantity}</td>
-                <td><OrderCard order={order} deleteOrder={props.deleteOrder}/></td>
+                <td><PrintingClass order={order}/><OrderCard order={order} deleteOrder={props.deleteOrder}/></td>
             </tr>)}
             </tbody>
 

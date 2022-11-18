@@ -1,0 +1,10 @@
+.logo {
+    max-width: 25%;
+    height: auto;
+
+}
+
+.order-id{
+    display: flex;
+    justify-content: right;
+}
