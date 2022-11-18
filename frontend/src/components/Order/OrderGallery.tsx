@@ -38,8 +38,8 @@ export default function OrderGallery(props: OrderGalleryProps) {
                 <td>{order.barName}</td>
                 <td>{order.listingName}</td>
                 <td>{order.quantity}</td>
-                <td><Button variant={"primary"} onClick={() => {setShow(!show)}}>{show?"Hide Order": "Show Order"}</Button>
-                    <OrderCard order={order} deleteOrder={props.deleteOrder}/>
+                <td><OrderCard order={order} deleteOrder={props.deleteOrder}/><Button variant={"primary"} onClick={() => {setShow(!show)}}>{show?"Hide Order": "Show Order"}</Button>
+
                     {show && <PrintingClass order={order}/>}</td>
 
             </tr>)}
