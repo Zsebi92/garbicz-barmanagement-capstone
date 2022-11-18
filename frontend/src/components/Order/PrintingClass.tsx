@@ -27,6 +27,7 @@ export default function PrintingClass(props: PrintClassProps) {
 
             <div ref={componentRef}>
                 <header>
+                    <div className={"header"}>
                     <img
                         src="https://tickets.garbiczfestival.com/uploads/garbicz_festival/image_asset_html_with_images_paragraph_image1/file/34/logo.png"
                         className={"logo"} alt={"Logo"}/>
@@ -35,13 +36,17 @@ export default function PrintingClass(props: PrintClassProps) {
                         <h4>Order Id: {props.order.id}</h4>
                     </section>
 
+
+                    </div>
+
                 </header>
                 <body>
                     <section className={"bar-name"}>
                         <h1>Lieferung an: {props.order.barName}</h1>
                     </section>
 
-                    <Table striped bordered hover variant={"light"}>
+                    <div className={"table"}>
+                    <Table className={"order"} striped bordered hover variant={"light"}>
                         <thead>
                         <tr>
                             <th>Getränk</th>
@@ -53,7 +58,11 @@ export default function PrintingClass(props: PrintClassProps) {
                         <th>{props.order.listingName}</th>
                         <th>{props.order.quantity}</th>
                         </tr>
+                        </tbody>
+                    </Table>
+                    </div>
 
+                        <div className={"singing"}>
                         <section className={"signing-admin"}>
                             _____________________________
                             <h5>Unterschrift Lager</h5>
@@ -68,8 +77,9 @@ export default function PrintingClass(props: PrintClassProps) {
                             _____________________________
                             <h5>Unterschrift Bar </h5>
                         </section>
-                        </tbody>
-                    </Table>
+                        </div>
+
+
 
                 </body>
 
