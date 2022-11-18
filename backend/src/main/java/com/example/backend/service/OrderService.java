@@ -40,7 +40,6 @@ public class OrderService {
         orderHandler.setId(idService.generateId());
 
         orderHandler.setBarName(orderHandlerDTO.getBarName());
-
         orderHandler.setListingName(orderHandlerDTO.getListingName());
         orderHandler.setQuantity(orderHandlerDTO.getQuantity());
 
@@ -51,8 +50,5 @@ public class OrderService {
         repo.deleteById(id);
     }
 
-    public OrderHandler editOrder(String id, OrderHandler orderHandler){
-        repo.save(orderHandler);
-        return orderHandler;
-    }
+
 }

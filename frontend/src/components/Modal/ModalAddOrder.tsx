@@ -7,17 +7,17 @@ import {Bar} from "../../model/Bar";
 import {Listing} from "../../model/Listing";
 
 
-type ModalAddOrder = {
+type ModalAddOrderProps = {
     addOrder: (addOrder: Order) => void;
     order: Order;
     bars: Bar[];
     listings: Listing[];
 }
 
-export default function ModalAddOrder(props: ModalAddOrder){
+export default function ModalAddOrder(props: ModalAddOrderProps){
 
 
-    const [order, setOrder] = useState(props.order)
+    const [, setOrder] = useState(props.order)
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);

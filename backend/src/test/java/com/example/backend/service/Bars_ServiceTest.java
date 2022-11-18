@@ -39,15 +39,17 @@ class Bars_ServiceTest {
     @Test
     void addBar() {
         // GIVEN
-        Bar dummyBar = new Bar("1","WeinBar","links neben der Hauptbühne","Nur Wein");
-        when(repo.save(dummyBar)).thenReturn(dummyBar);
+        Bar dummyBar = Bar.builder().name("Test").location("Test").description("Test").build();
+        when(repo.save(dummyBar)).thenReturn(Bar.builder().id("123").name("Test").location("Test").description("Test").build());
 
         // WHEN
-        Bar actual = service.addBar(new BarDTO());
+        BarDTO newBar = BarDTO.builder().name("Test").location("Test").description("Test").build();
+        Bar actual = service.addBar(newBar);
 
         // THEN
+        Bar expected = Bar.builder().id("123").name("Test").location("Test").description("Test").build();
         verify(repo).save(dummyBar);
-        assertEquals(dummyBar, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -63,18 +65,5 @@ class Bars_ServiceTest {
         verify(repo).deleteById("1");
     }
 
-    @Test
-    void editBar() {
-        // GIVEN
-        Bar dummyBar = new Bar("1","WeinBar","links neben der Hauptbühne","Nur Wein");
 
-        when(service.editBar("1", dummyBar)).thenReturn(dummyBar);
-        when(repo.existsById("1")).thenReturn(true);
-
-        // WHEN
-        Bar actual = service.editBar("1", dummyBar);
-
-        // THEN
-        assertEquals(dummyBar, actual);
-    }
 }

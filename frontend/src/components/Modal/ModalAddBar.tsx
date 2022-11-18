@@ -11,7 +11,7 @@ type AddBarProps = {
 
 export default function ModalAddBar(props: AddBarProps) {
 
-    const [bar ,setBar] = useState(props.bar)
+    const [ ,setBar] = useState(props.bar)
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);

@@ -48,10 +48,6 @@ public class ListingService {
         repo.deleteById(id);
     }
 
-    public Listing editListing(String id, Listing listing){
-        repo.save(listing);
-        return listing;
-    }
 
 
 

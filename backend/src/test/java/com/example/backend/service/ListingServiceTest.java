@@ -39,15 +39,17 @@ class ListingServiceTest {
     @Test
     void addListing() {
         // GIVEN
-        Listing dummyListing = new Listing("1", "Cola", "0,33l","1,50", "1,20", "24", "200", "100");
-        when(repo.save(dummyListing)).thenReturn(dummyListing);
+        Listing dummyListing = Listing.builder().name("Test").liter("Test").grossPurchase("Test").purchaseNet("Test").bottlesPerBox("Test").boxes("Test").pallets("Test").build();
+        when(repo.save(dummyListing)).thenReturn(Listing.builder().id("123").name("Test").liter("Test").grossPurchase("Test").purchaseNet("Test").bottlesPerBox("Test").boxes("Test").pallets("Test").build());
 
         // WHEN
-        Listing actual = service.addListing(new ListingDTO());
+        ListingDTO newListing = ListingDTO.builder().name("Test").liter("Test").grossPurchase("Test").purchaseNet("Test").bottlesPerBox("Test").boxes("Test").pallets("Test").build();
+        Listing actual = service.addListing(newListing);
 
         // THEN
+        Listing expected = Listing.builder().id("123").name("Test").liter("Test").grossPurchase("Test").purchaseNet("Test").bottlesPerBox("Test").boxes("Test").pallets("Test").build();
         verify(repo).save(dummyListing);
-        assertEquals(dummyListing, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -63,21 +65,6 @@ class ListingServiceTest {
         verify(repo).deleteById("1");
     }
 
-    @Test
-    void editListing() {
-        // GIVEN
-        Listing dummyListing = new Listing("1", "Cola", "0,5l", "1,50", "1,20", "24", "200", "100");
 
-        when(service.editListing("1", dummyListing)).thenReturn(dummyListing);
-        when(repo.existsById("1")).thenReturn(true);
-
-        // WHEN
-        Listing actual = service.editListing("1", dummyListing);
-
-        // THEN
-        assertEquals(dummyListing, actual);
-
-
-    }
 
 }
