@@ -39,10 +39,7 @@ public class ListingController {
         service.deleteListing(id);
     }
 
-    @PutMapping("/{id}")
-    public Listing editListing(@PathVariable String id, @RequestBody Listing listing) {
-        return service.editListing(id, listing);
-    }
+
 
 
 }

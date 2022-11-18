@@ -37,10 +37,7 @@ public class BarsController {
         service.deleteBar(id);
     }
 
-    @PutMapping("/{id}")
-    public Bar editBar(@PathVariable String id, @RequestBody Bar bar){
-        return service.editBar(id, bar);
-    }
+
 
 
 

@@ -38,8 +38,5 @@ public class OrderController {
         service.deleteOrder(id);
     }
 
-    @PutMapping("/{id}")
-    public OrderHandler editOrder(@PathVariable String id, @RequestBody OrderHandler orderHandler){
-        return service.editOrder(id, orderHandler);
-    }
+
 }

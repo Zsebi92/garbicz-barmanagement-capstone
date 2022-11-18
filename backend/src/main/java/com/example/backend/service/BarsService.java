@@ -44,10 +44,6 @@ public class BarsService {
         repo.deleteById(id);
     }
 
-    public Bar editBar(String id, Bar bar){
-        repo.save(bar);
-        return bar;
-    }
 
 
 }
