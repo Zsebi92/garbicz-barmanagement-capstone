@@ -3,12 +3,13 @@ package com.example.backend.service;
 import com.example.backend.model.Listing;
 import com.example.backend.model.ListingDTO;
 import com.example.backend.repository.InventoryRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
+@Slf4j
 @Service
 public class ListingService {
 
@@ -40,7 +41,7 @@ public class ListingService {
         listing.setBottlesPerBox(listingDTO.getBottlesPerBox());
         listing.setBoxes(listingDTO.getBoxes());
         listing.setPallets(listingDTO.getPallets());
-
+        log.info("persist listing: " + listing);
         return repo.save(listing);
     }
 
