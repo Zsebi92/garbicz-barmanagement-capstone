@@ -1,5 +1,5 @@
 import ReactToPrint from "react-to-print";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import {Order} from "../../model/Order";
 import Button from "react-bootstrap/Button";
 import "../Order/PrintincClass.css"
