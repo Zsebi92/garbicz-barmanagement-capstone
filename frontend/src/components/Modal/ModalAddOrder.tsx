@@ -65,10 +65,10 @@ export default function ModalAddOrder(props: ModalAddOrderProps){
                 Add Order
             </Button>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal closeButton>
                     <Modal.Title>Add Order</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+                </Modal>
+                <Modal>
                     <form onSubmit={(event) => onCreate(event)}>
 
                         <select aria-label="Default select example" onChange={event => setBarName(event.target.value)}>
@@ -91,7 +91,7 @@ export default function ModalAddOrder(props: ModalAddOrderProps){
                             Back
                         </Button>
                     </form>
-                </Modal.Body>
+                </Modal>
             </Modal>
 
         </div>
