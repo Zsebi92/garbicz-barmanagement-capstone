@@ -24,8 +24,8 @@ export default function UseBar(){
     const addBar = (bar: Bar) => {
         axios.post("/api/bars", bar)
             .then(() => toast.success("Bar wurde erfolgreich angelegt"))
-            .then(getAllBars)
             .catch((error) => toast.error(error.message))
+            .then(getAllBars)
 
     }
 
