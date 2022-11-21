@@ -14,9 +14,9 @@ export default function AdminOverview() {
                 <h1>AdminOverview</h1>
             </header>
 
-            <body>
+
             <NavBar/>
-            </body>
+
 
 
         </div>

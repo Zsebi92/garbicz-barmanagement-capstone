@@ -24,11 +24,7 @@ export default function NavBar() {
                 </Button>
             </section>
 
-            <section>
-                <Button variant={"primary"} size={"lg"}>
-                    <NavLink className={"link-name"} to={"/staff-management"}>Staff-Management</NavLink>
-                </Button>
-            </section>
+
 
 
 

@@ -1,7 +1,7 @@
 import {Listing} from "../../model/Listing";
 import "./ListingGallery.css";
 import React from "react";
-import {Table} from "react-bootstrap";
+import Table from 'react-bootstrap/Table';
 import ListingCard from "./ListingCard";
 
 
@@ -14,9 +14,9 @@ export default function ListingGallery(props: ListingGalleryProps) {
 
     return (
         <>
-            <Table striped bordered hover variant={"light"} responsive>
+            <Table className={"table-listing"} striped bordered hover variant={"light"} responsive={"lg"}>
                 <thead>
-                <tr>
+                <tr className={"table-header"}>
                     <th>Drink</th>
                     <th>Drinksize</th>
                     <th>Gross purchase</th>
@@ -29,7 +29,7 @@ export default function ListingGallery(props: ListingGalleryProps) {
                 </thead>
                 <tbody>
                 {props.listings.map((listing) =>
-                <tr>
+                <tr key={listing.id}>
                     <td>{listing.name}</td>
                     <td>{listing.liter}</td>
                     <td>{listing.grossPurchase}</td>
