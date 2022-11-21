@@ -33,7 +33,7 @@ public class ListingController {
 
     @PostMapping
     public Listing addListing(@RequestBody ListingDTO listingDTO){
-
+        log.info("start to add listing with:  " + listingDTO);
         Listing result = service.addListing(listingDTO);
         log.info("add listing executed: " + result);
 
@@ -44,8 +44,6 @@ public class ListingController {
     public void deleteListing(@PathVariable String id){
         service.deleteListing(id);
     }
-
-
 
 
 }
