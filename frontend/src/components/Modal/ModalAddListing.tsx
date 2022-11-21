@@ -50,16 +50,16 @@ export default function ModalAddListing(props: ModalAddListingProps) {
     }
 
     return (
-        <div>
+        <>
             <Button variant="primary" onClick={handleShow}>
                 Add Listing
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal closeButton>
+                <Modal.Header closeButton>
                     <Modal.Title>Add Listing</Modal.Title>
-                </Modal>
-                <Modal>
+                </Modal.Header>
+                <Modal.Body>
                     <form onSubmit={(event) => onCreate(event)}>
                     <input name={"name"}
                            placeholder={"Name"}
@@ -87,8 +87,8 @@ export default function ModalAddListing(props: ModalAddListingProps) {
                             Back
                         </Button>
                     </form>
-                </Modal>
+                </Modal.Body>
             </Modal>
-        </div>
+        </>
     )
 }
