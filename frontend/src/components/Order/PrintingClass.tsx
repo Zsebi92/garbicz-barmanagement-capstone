@@ -11,9 +11,6 @@ type PrintClassProps = {
 
 export default function PrintingClass(props: PrintClassProps) {
 
-    useEffect(() => {
-
-    }, [])
 
     const componentRef = useRef<HTMLDivElement>(null)
 

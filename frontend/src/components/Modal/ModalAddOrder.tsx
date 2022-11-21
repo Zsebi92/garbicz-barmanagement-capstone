@@ -48,19 +48,19 @@ export default function ModalAddOrder(props: ModalAddOrderProps){
 
     const mapBars = () => {
         return props.bars.map((b) =>
-            <option value={b.name}>{b.name}</option>)
+            <option key={barName} value={b.name}>{b.name}</option>)
 
     }
 
     const mapListingName = () => {
         return props.listings.map((l) =>
-            <option value={l.name + l.liter}>{l.name + l.liter}</option>)
+            <option key={listingName} value={l.name + l.liter}>{l.name + l.liter}</option>)
     }
 
 
 
     return(
-        <>
+        <div className={"add-order"}>
             <Button variant="primary" onClick={handleShow}>
                 Add Order
             </Button>
@@ -94,6 +94,6 @@ export default function ModalAddOrder(props: ModalAddOrderProps){
                 </Modal.Body>
             </Modal>
 
-        </>
+        </div>
     )
 }

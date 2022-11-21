@@ -20,7 +20,7 @@ export default function OrderGallery(props: OrderGalleryProps) {
     const [show, setShow] = useState(false);
 
     return (
-        <>
+        <div className={"order-gallery"} >
             <Table striped bordered hover variant={"light"} responsive>
             <thead>
             <tr>
@@ -33,7 +33,7 @@ export default function OrderGallery(props: OrderGalleryProps) {
             </thead>
             <tbody>
             {props.orders.map((order) =>
-            <tr>
+            <tr key={order.id}>
                 <td>{order.id}</td>
                 <td>{order.barName}</td>
                 <td>{order.listingName}</td>
@@ -46,6 +46,6 @@ export default function OrderGallery(props: OrderGalleryProps) {
             </tbody>
 
             </Table>
-        </>
+        </div>
     )
 }

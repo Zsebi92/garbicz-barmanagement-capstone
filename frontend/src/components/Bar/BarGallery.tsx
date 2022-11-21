@@ -25,7 +25,7 @@ export default function BarGallery(props: BarGalleryProps) {
                 </thead>
                 <tbody>
                 {props.bars.map((bar) =>
-                    <tr>
+                    <tr key={bar.id}>
                         <td>{bar.name}</td>
                         <td>{bar.location}</td>
                         <td>{bar.description}</td>
