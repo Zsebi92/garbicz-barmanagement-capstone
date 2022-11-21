@@ -43,7 +43,8 @@ export default function ModalAddBar(props: AddBarProps) {
     }
 
     return (
-        <>
+        <div>
+
             <Button variant="primary" onClick={handleShow}>
                 Add Bar
             </Button>
@@ -53,6 +54,7 @@ export default function ModalAddBar(props: AddBarProps) {
                     <Modal.Title>Add Bar</Modal.Title>
                 </Modal>
                 <Modal>
+
                     <form onSubmit={(event) => onCreate(event)}>
                         <input name={"name"}
                                placeholder={"Bar name"}
@@ -68,6 +70,6 @@ export default function ModalAddBar(props: AddBarProps) {
                     </form>
                 </Modal>
             </Modal>
-        </>
+        </div>
     )
 }
