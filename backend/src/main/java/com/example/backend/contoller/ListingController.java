@@ -3,11 +3,13 @@ package com.example.backend.contoller;
 import com.example.backend.model.Listing;
 import com.example.backend.model.ListingDTO;
 import com.example.backend.service.ListingService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/listings")
 public class ListingController {
@@ -31,7 +33,11 @@ public class ListingController {
 
     @PostMapping
     public Listing addListing(@RequestBody ListingDTO listingDTO){
-        return service.addListing(listingDTO);
+
+        Listing result = service.addListing(listingDTO);
+        log.info("add listing executed: " + result);
+
+        return result;
     }
 
     @DeleteMapping("/{id}")

@@ -22,7 +22,6 @@ export default function UseOrder(){
     }
 
 
-
     const addOrder = (order: Order) => {
         axios.post("/api/orders", order)
             .then(() => toast.success("Order wurde erfolgreich angelegt!"))
