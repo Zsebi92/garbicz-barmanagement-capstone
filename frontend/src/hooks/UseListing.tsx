@@ -24,7 +24,7 @@ export default function UseListing(){
     const addListing = (listing: Listing) => {
         axios.post("/api/listings", listing)
             .then(() => toast.success("Getränk wurde erfolgreich angelegt!"))
-            .catch((error) => toast.error(error.message))
+            .catch((error) => console.log(error.message))
             .then(getAllListings)
     }
 
